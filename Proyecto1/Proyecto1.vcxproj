@@ -127,7 +127,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Controladora.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MenuFacturas.cpp" />
+    <ClCompile Include="MenuMantenimiento.cpp" />
+    <ClCompile Include="MenuPrincipal.cpp" />
+    <ClCompile Include="MenuProductos.cpp" />
+    <ClCompile Include="MenuReportes.cpp" />
+    <ClCompile Include="MenuVentas.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Controladora.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuFacturas.h" />
+    <ClInclude Include="MenuMantenimiento.h" />
+    <ClInclude Include="MenuPrincipal.h" />
+    <ClInclude Include="MenuProductos.h" />
+    <ClInclude Include="MenuReportes.h" />
+    <ClInclude Include="MenuVentas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
