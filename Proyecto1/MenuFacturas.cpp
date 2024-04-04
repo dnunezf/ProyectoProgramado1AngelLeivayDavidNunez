@@ -1,4 +1,5 @@
 #include "MenuFacturas.h"
+#include "ExcepcionMenu.h"
 
 void MenuFacturas::mostrar()
 {
@@ -14,6 +15,47 @@ void MenuFacturas::mostrar()
     cin >> opcion;
 
     procesarOpcion(opcion);
+
+    try
+    {
+        validarOpcion(opcion);
+    }
+    catch (ExcepcionRangoInferior& e)
+    {
+        cout << "\n" << e.toString() << endl;
+        mostrar();
+    }
+    catch (ExcepcionRangoSuperior& e)
+    {
+        cout << "\n" << e.toString() << endl;
+        mostrar();
+    }
+    catch (ExcepcionValor& e)
+    {
+        cout << "\n" << e.toString() << endl;
+        mostrar();
+    }
+}
+
+void MenuFacturas::validarOpcion(int opcion)
+{
+    if (opcion < 1)
+    {
+        throw ExcepcionRangoInferior(1, 4, opcion);
+    }
+    else if (opcion > 3)
+    {
+        throw ExcepcionRangoSuperior(1, 4, opcion);
+    }
+    //cin.fail() permite validar si la entrada es tipo INT o no es...
+    else if (cin.fail())
+    {
+        throw ExcepcionValor();
+    }
+    else
+    {
+        procesarOpcion(opcion);
+    }
 }
 
 void MenuFacturas::procesarOpcion(int opcion) 

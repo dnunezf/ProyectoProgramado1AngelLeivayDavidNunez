@@ -9,6 +9,7 @@ class MenuMantenimiento : public Menu
 {
 	public:
 		void mostrar();
+		void validarOpcion(int opcion);
 		void procesarOpcion(int opcion);
 
 	private:

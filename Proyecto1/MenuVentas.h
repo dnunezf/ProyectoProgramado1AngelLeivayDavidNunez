@@ -7,5 +7,6 @@ class MenuVentas : public Menu
 {
     public:
         void mostrar();
+        void validarOpcion(int opcion);
         void procesarOpcion(int opcion);
 };
