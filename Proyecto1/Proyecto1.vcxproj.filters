@@ -71,5 +71,8 @@
     <ClInclude Include="ExcepcionMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="suma.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
