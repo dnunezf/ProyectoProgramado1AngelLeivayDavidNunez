@@ -127,8 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Carne.cpp" />
     <ClCompile Include="Controladora.cpp" />
+    <ClCompile Include="Embutido.cpp" />
+    <ClCompile Include="Empaque.cpp" />
     <ClCompile Include="ExcepcionMenu.cpp" />
+    <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuFacturas.cpp" />
     <ClCompile Include="MenuMantenimiento.cpp" />
@@ -138,8 +142,12 @@
     <ClCompile Include="MenuVentas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Carne.h" />
     <ClInclude Include="Controladora.h" />
+    <ClInclude Include="Embutido.h" />
+    <ClInclude Include="Empaque.h" />
     <ClInclude Include="ExcepcionMenu.h" />
+    <ClInclude Include="Fecha.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuFacturas.h" />
     <ClInclude Include="MenuMantenimiento.h" />
