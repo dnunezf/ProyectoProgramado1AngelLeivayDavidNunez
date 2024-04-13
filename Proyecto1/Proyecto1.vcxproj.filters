@@ -54,6 +54,21 @@
     <ClCompile Include="Fecha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Producto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Conserva.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Perecedero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProdPerecedero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Abarrote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controladora.h">
@@ -93,6 +108,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Fecha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Producto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Conserva.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Perecedero.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProdPerecedero.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Abarrote.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

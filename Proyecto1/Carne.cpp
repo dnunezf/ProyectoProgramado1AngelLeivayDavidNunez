@@ -1,12 +1,12 @@
 #include "Carne.h"
 
-Carne::Carne()
+Carne::Carne() : ProdPerecedero(), nombreAnimal(" "), parteDelAnimal(" ")
 {
-	nombreAnimal = " ";
-	parteDelAnimal = " ";
+
 }
 
-Carne::Carne(string nA, string pA) : nombreAnimal(nA), parteDelAnimal(pA)
+Carne::Carne(string cod, string nC, string desc, double pC, string cat, int exist, int lim, Fecha* fI, bool nac, double pes, Perecedero* perec, string nA, string pA) 
+	: ProdPerecedero(cod, nC, desc, pC, cat, exist, lim, fI, nac, pes, perec), nombreAnimal(nA), parteDelAnimal(pA)
 {
 
 }
@@ -40,6 +40,7 @@ string Carne::toString()
 {
 	stringstream s;
 
+	s << "\n" << ProdPerecedero::toString() << endl;
 	s << "\n" << "Animal: " << nombreAnimal << endl;
 	s << "\n" << "Parte: " << parteDelAnimal << endl;
 

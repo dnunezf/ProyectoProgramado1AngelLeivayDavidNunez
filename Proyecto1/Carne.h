@@ -1,11 +1,9 @@
 //CLASE CARNE
 
 #pragma once
-#include"iostream"
-#include"sstream"
-using namespace std;
+#include"ProdPerecedero.h"
 
-class Carne
+class Carne : public ProdPerecedero
 {
 	protected:
 		string nombreAnimal;
@@ -16,7 +14,7 @@ class Carne
 		Carne();
 
 		//CONSTRUCTOR PARAMETRIZADO
-		Carne(string, string);
+		Carne(string, string, string, double, string, int, int, Fecha*, bool, double, Perecedero*, string, string);
 
 
 		virtual ~Carne();

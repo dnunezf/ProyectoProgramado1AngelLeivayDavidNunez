@@ -1,0 +1,50 @@
+//CLASE BASE PRODUCTO
+
+#pragma once
+#include"Fecha.h"
+#include<iostream>
+#include<sstream>
+using namespace std;
+
+class Producto
+{
+	private:
+		string codigo;
+		string nombreComercial;
+		string descripcion;
+		double precioCosto;
+		string categoria;
+		int existencia;
+		int limite;
+		Fecha* fechaIngreso;
+
+	public:
+		Producto();
+
+		Producto(string, string, string, double, string, int, int, Fecha*);
+
+		virtual ~Producto();
+
+        //GET
+        string getCodigo();
+        string getNombreComercial();
+        string getDescripcion();
+        double getPrecioCosto();
+        string getCategoria();
+        int getExistencia();
+        int getLimite();
+        Fecha* getFechaIngreso();
+
+        //SET
+        void setCodigo(string codigo);
+        void setNombreComercial(string nombreComercial);
+        void setDescripcion(string descripcion);
+        void setPrecioCosto(double precioCosto);
+        void setCategoria(string categoria);
+        void setExistencia(int existencia);
+        void setLimite(int limite);
+        void setFechaIngreso(Fecha* fechaIngreso);
+
+        //toString
+        string toString();
+};

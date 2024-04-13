@@ -12,7 +12,7 @@ class Embutido : Carne
 
 	public:
 		Embutido();
-		Embutido(string, string, string);
+		Embutido(string, string, string, double, string, int, int, Fecha*, bool, double, Perecedero*, string, string, string);
 		virtual ~Embutido();
 		string getMarca();
 		void setMarca(string);

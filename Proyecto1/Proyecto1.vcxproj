@@ -127,7 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Abarrote.cpp" />
     <ClCompile Include="Carne.cpp" />
+    <ClCompile Include="Conserva.cpp" />
     <ClCompile Include="Controladora.cpp" />
     <ClCompile Include="Embutido.cpp" />
     <ClCompile Include="Empaque.cpp" />
@@ -140,9 +142,14 @@
     <ClCompile Include="MenuProductos.cpp" />
     <ClCompile Include="MenuReportes.cpp" />
     <ClCompile Include="MenuVentas.cpp" />
+    <ClCompile Include="Perecedero.cpp" />
+    <ClCompile Include="ProdPerecedero.cpp" />
+    <ClCompile Include="Producto.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Abarrote.h" />
     <ClInclude Include="Carne.h" />
+    <ClInclude Include="Conserva.h" />
     <ClInclude Include="Controladora.h" />
     <ClInclude Include="Embutido.h" />
     <ClInclude Include="Empaque.h" />
@@ -155,6 +162,9 @@
     <ClInclude Include="MenuProductos.h" />
     <ClInclude Include="MenuReportes.h" />
     <ClInclude Include="MenuVentas.h" />
+    <ClInclude Include="Perecedero.h" />
+    <ClInclude Include="ProdPerecedero.h" />
+    <ClInclude Include="Producto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
