@@ -69,6 +69,9 @@
     <ClCompile Include="Abarrote.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Categoria.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controladora.h">
@@ -123,6 +126,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Abarrote.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Categoria.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

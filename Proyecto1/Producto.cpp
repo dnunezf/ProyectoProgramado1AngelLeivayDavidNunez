@@ -117,3 +117,11 @@ string Producto::toString()
 
     return s.str();
 }
+
+//METODO QUE PERMITE CALCULA EL PORCENTAJE DE GANANCIA
+double Producto::calcularGanancia()
+{
+    double porcGanancia = ptrCategoria->porceGanancia(categoria);
+
+    return precioCosto * porcGanancia;
+}

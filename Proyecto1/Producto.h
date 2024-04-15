@@ -2,6 +2,7 @@
 
 #pragma once
 #include"Fecha.h"
+#include"Categoria.h"
 #include<iostream>
 #include<sstream>
 using namespace std;
@@ -16,7 +17,8 @@ class Producto
 		string categoria;
 		int existencia;
 		int limite;
-		Fecha* fechaIngreso;
+		Fecha* fechaIngreso; //PUNTERO A FECHA
+        Categoria* ptrCategoria; //PUNTERO A CATEGORIA
 
 	public:
 		Producto();
@@ -47,4 +49,7 @@ class Producto
 
         //toString
         string toString();
+
+        //METODO QUE PERMITE CALCULAR LA GANANCIA DE UN PRODUCTO
+        double calcularGanancia();
 };

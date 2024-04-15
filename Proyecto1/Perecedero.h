@@ -6,7 +6,7 @@
 class Perecedero
 {
 	private:
-		Fecha* fechaVencimiento;
+		Fecha* fechaVencimiento; //PUNTERO A FECHA
 
 	public:
 		Perecedero();

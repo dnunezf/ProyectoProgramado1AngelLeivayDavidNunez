@@ -9,7 +9,7 @@ class ProdPerecedero : public Producto
     private:
         bool nacional;
         double peso;
-        Perecedero* ptrPerecedero;
+        Perecedero* ptrPerecedero; //PUNTERO A PERECEDERO
 
     public:
         ProdPerecedero();
