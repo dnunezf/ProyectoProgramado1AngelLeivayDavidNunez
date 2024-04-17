@@ -67,3 +67,21 @@ string ProdPerecedero::toString()
 
     return s.str();
 }
+
+void ProdPerecedero::save(ofstream& file) {
+    file << getCodigo() << endl
+        << getNombreComercial() << endl
+        << getDescripcion() << endl
+        << getPrecioCosto() << endl
+        << getCategoria() << endl
+        << getExistencia() << endl
+        << getLimite() << endl
+        << getNacional() << endl
+        << getPeso() << endl;
+    if (ptrPerecedero != NULL) {
+        file << 1 << endl
+           << ptrPerecedero->getFechaVencimiento()->getDia() << endl
+           << ptrPerecedero->getFechaVencimiento()->getMes() << endl
+           << ptrPerecedero->getFechaVencimiento()->getAnio() << endl;
+    }
+}

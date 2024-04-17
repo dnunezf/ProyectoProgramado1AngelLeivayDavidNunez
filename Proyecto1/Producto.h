@@ -5,6 +5,7 @@
 #include"Categoria.h"
 #include<iostream>
 #include<sstream>
+#include<fstream>
 using namespace std;
 
 class Producto
@@ -52,4 +53,8 @@ class Producto
 
         //METODO QUE PERMITE CALCULAR LA GANANCIA DE UN PRODUCTO
         double calcularGanancia();
+
+        //Parte Archivo
+        //Save
+        virtual void save(ofstream& file);
 };

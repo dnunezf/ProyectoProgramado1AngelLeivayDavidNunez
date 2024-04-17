@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="Abarrote.h" />
     <ClInclude Include="Carne.h" />
+    <ClInclude Include="Carrito.h" />
     <ClInclude Include="Categoria.h" />
     <ClInclude Include="Conserva.h" />
     <ClInclude Include="Controladora.h" />

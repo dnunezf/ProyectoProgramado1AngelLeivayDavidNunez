@@ -22,4 +22,5 @@ class ProdPerecedero : public Producto
         void setPeso(double peso);
         void setPerecedero(Perecedero* perecedero);
         string toString();
+        virtual void save(ofstream& file);
 };

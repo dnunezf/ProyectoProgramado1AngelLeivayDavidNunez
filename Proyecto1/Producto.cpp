@@ -12,10 +12,8 @@ Producto::Producto()
     fechaIngreso = NULL;
 }
 
-Producto::Producto(string cod, string nC, string desc, double pC, string cat, int exist, int lim, Fecha* fI) : codigo(cod), nombreComercial(nC), descripcion(desc), precioCosto(pC), categoria(cat), existencia(exist), limite(lim), fechaIngreso(fI)
-{
-
-}
+Producto::Producto(string cod, string nC, string desc, double pC, string cat, int exist, int lim, Fecha* fI) : 
+    codigo(cod), nombreComercial(nC), descripcion(desc), precioCosto(pC), categoria(cat), existencia(exist), limite(lim), fechaIngreso(fI) {}
 
 Producto::~Producto()
 {
@@ -124,4 +122,20 @@ double Producto::calcularGanancia()
     double porcGanancia = ptrCategoria->porceGanancia(categoria);
 
     return precioCosto * porcGanancia;
+}
+
+//Parte Archivo
+//Save
+void Producto::save(ofstream& file) {
+    file << getCodigo() << endl
+        << getNombreComercial() << endl
+        << getDescripcion() << endl
+        << getPrecioCosto() << endl
+        << getCategoria() << endl
+        << getExistencia() << endl
+        << getLimite() << endl;
+    if (fechaIngreso != NULL)
+        file << fechaIngreso->getDia() << endl
+        << fechaIngreso->getMes() << endl
+        << fechaIngreso->getAnio() << endl;
 }
