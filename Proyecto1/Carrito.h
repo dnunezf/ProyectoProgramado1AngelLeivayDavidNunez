@@ -6,7 +6,10 @@ class Carrito {
 private:
 
 public:
-	void ingresaProducto();
-	bool verficarExistencia();
-	void 
+	Carrito();
+	virtual ~Carrito();
+	bool ingresaProducto();
+	bool verificarExistencia();
+	double precioTotal();
+	string toString();
 };

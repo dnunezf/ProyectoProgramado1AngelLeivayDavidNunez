@@ -72,6 +72,9 @@
     <ClCompile Include="Categoria.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Carrito.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controladora.h">
