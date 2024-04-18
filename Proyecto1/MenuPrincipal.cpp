@@ -15,7 +15,7 @@ void MenuPrincipal::mostrar()
 		cout << "4. Salir" << endl;
 		cout << "\n" << "Ingrese una opcion: " << endl;
 
-		int opcion;
+		int opcion = obtenerValor(1, 4);
 		cin >> opcion;
 
 		procesarOpcion(opcion);
@@ -35,7 +35,6 @@ void MenuPrincipal::mostrar()
 		cout << "\n" << e->toString() << endl;
 		mostrar();
 	}
-
 }
 
 int MenuPrincipal::obtenerValor(int min, int max)
