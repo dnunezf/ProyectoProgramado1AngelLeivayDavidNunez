@@ -3,60 +3,56 @@
 
 void MenuPrincipal::mostrar()
 {
-	system("pause");
-	system("cls");
-
-	cout << "Menu Principal" << endl;
-	cout << "\n" << "1. Mantenimiento" << endl;
-	cout << "2. Ventas" << endl;
-	cout << "3. Reportes" << endl;
-	cout << "4. Salir" << endl;
-	cout << "\n" << "Ingrese una opcion: " << endl;
-
-	int opcion;
-	cin >> opcion;
-
 	try
 	{
-		validarOpcion(opcion);
+		system("pause");
+		system("cls");
+
+		cout << "Menu Principal" << endl;
+		cout << "\n" << "1. Mantenimiento" << endl;
+		cout << "2. Ventas" << endl;
+		cout << "3. Reportes" << endl;
+		cout << "4. Salir" << endl;
+		cout << "\n" << "Ingrese una opcion: " << endl;
+
+		int opcion;
+		cin >> opcion;
+
+		procesarOpcion(opcion);
 	}
-	catch (ExcepcionRangoInferior& e)
+	catch (ExcepcionRangoInferior* e)
 	{
-		cout << "\n" << e.toString() << endl;
+		cout << "\n" << e->toString() << endl;
 		mostrar();
 	}
-	catch (ExcepcionRangoSuperior& e)
+	catch (ExcepcionRangoSuperior* e)
 	{
-		cout << "\n" << e.toString() << endl;
+		cout << "\n" << e->toString() << endl;
 		mostrar();
 	}
-	catch (ExcepcionValor& e)
+	catch (ExcepcionValor* e)
 	{
-		cout << "\n" << e.toString() << endl;
+		cout << "\n" << e->toString() << endl;
 		mostrar();
 	}
 
 }
 
-void MenuPrincipal::validarOpcion(int opcion)
+int MenuPrincipal::obtenerValor(int min, int max)
 {
-	if (opcion < 1)
+	int valor = 0;
+
+	if (cin >> valor)
 	{
-		throw ExcepcionRangoInferior(1, 4, opcion);
-	}
-	else if (opcion > 4)
-	{
-		throw ExcepcionRangoSuperior(1, 4, opcion);
-	}
-	//cin.fail() permite validar si la entrada es tipo INT o no es...
-	else if (cin.fail())
-	{
-		throw ExcepcionValor();
+		if (valor < min) throw new ExcepcionRangoInferior(min, max, valor);
+		if (valor > max) throw new ExcepcionRangoSuperior(min, max, valor);
 	}
 	else
 	{
-		procesarOpcion(opcion);
+		throw new ExcepcionValor();
 	}
+
+	return valor;
 }
 
 void MenuPrincipal::procesarOpcion(int opcion)
