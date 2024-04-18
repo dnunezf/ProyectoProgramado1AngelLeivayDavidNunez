@@ -51,7 +51,7 @@ string ExcepcionRangoSuperior::toString()
 {
 	stringstream s;
 
-	s << "\n" << "El valor " << _valor << " es mayor al maximo permitido" << endl;
+	s << "El valor " << _valor << " es mayor al maximo permitido" << endl;
 	return s.str();
 }
 
@@ -65,7 +65,7 @@ string ExcepcionValor::toString()
 {
 	stringstream s;
 
-	s << "\n" << "El valor digitado no es un numero entero" << endl;
+	s << "El valor digitado no es un numero entero" << endl;
 
 	return s.str();
 }

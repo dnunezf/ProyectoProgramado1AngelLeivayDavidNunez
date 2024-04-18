@@ -7,6 +7,6 @@ class MenuFacturas : public Menu
 {
 	public:
 		void mostrar();
-		void validarOpcion(int opcion);
+		int obtenerValor(int, int);
 		void procesarOpcion(int opcion);
 };

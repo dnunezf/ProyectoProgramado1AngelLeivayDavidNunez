@@ -20,7 +20,7 @@ void MenuPrincipal::mostrar()
 	}
 	catch (ExcepcionRangoInferior* e)
 	{
-		cout << "\n" << e->toString() << endl;
+		cout << e->toString() << endl;
 		mostrar();
 	}
 	catch (ExcepcionRangoSuperior* e)
@@ -31,8 +31,11 @@ void MenuPrincipal::mostrar()
 	catch (ExcepcionValor* e)
 	{
 		cout << "\n" << e->toString() << endl;
+
+		//LIMPIA ESTADO DE ERROR DE LA ENTRADA ESTANDAR, ELIMINA CUALQUIER CARACTER DEL BUFER ENTRADA
 		cin.clear();
 		cin.ignore(255, '\n');
+
 		mostrar();
 	}
 }
@@ -73,9 +76,5 @@ void MenuPrincipal::procesarOpcion(int opcion)
 		case 4:
 			cout << "\n" << "Saliendo del programa..." << endl;
 			exit(0);
-
-		default:
-			cout << "\n" << "Opcion no valida..." << endl;
-			break;
 	}
 }

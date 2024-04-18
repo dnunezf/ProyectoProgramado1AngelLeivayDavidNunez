@@ -3,6 +3,7 @@
 
 void MenuMantenimiento::mostrar()
 {
+	system("pause");
 	system("cls");
 
 	cout << "Menu Mantenimiento" << endl;
@@ -11,51 +12,48 @@ void MenuMantenimiento::mostrar()
 	cout << "3. Retornar" << endl;
 	cout << "\n" << "Ingrese una opcion: " << endl;
 
-	int opcion;
-	cin >> opcion;
-
-	procesarOpcion(opcion);
-
 	try
 	{
-		validarOpcion(opcion);
+		int opcion = obtenerValor(1, 3);
+		procesarOpcion(opcion);
 	}
-	catch (ExcepcionRangoInferior& e)
+	catch (ExcepcionRangoInferior* e)
 	{
-		cout << "\n" << e.toString() << endl;
+		cout << e->toString() << endl;
 		mostrar();
 	}
-	catch (ExcepcionRangoSuperior& e)
+	catch (ExcepcionRangoSuperior* e)
 	{
-		cout << "\n" << e.toString() << endl;
+		cout << "\n" << e->toString() << endl;
 		mostrar();
 	}
-	catch (ExcepcionValor& e)
+	catch (ExcepcionValor* e)
 	{
-		cout << "\n" << e.toString() << endl;
+		cout << "\n" << e->toString() << endl;
+
+		//LIMPIA ESTADO DE ERROR DE LA ENTRADA ESTANDAR, ELIMINA CUALQUIER CARACTER DEL BUFER ENTRADA
+		cin.clear();
+		cin.ignore(255, '\n');
+
 		mostrar();
 	}
 }
 
-void MenuMantenimiento::validarOpcion(int opcion)
+int MenuMantenimiento::obtenerValor(int min, int max)
 {
-	if (opcion < 1)
+	int valor = 0;
+
+	if (cin >> valor)
 	{
-		throw ExcepcionRangoInferior(1, 4, opcion);
-	}
-	else if (opcion > 3)
-	{
-		throw ExcepcionRangoSuperior(1, 4, opcion);
-	}
-	//cin.fail() permite validar si la entrada es tipo INT o no es...
-	else if (cin.fail())
-	{
-		throw ExcepcionValor();
+		if (valor < min) throw new ExcepcionRangoInferior(min, max, valor);
+		if (valor > max) throw new ExcepcionRangoSuperior(min, max, valor);
 	}
 	else
 	{
-		procesarOpcion(opcion);
+		throw new ExcepcionValor();
 	}
+
+	return valor;
 }
 
 void MenuMantenimiento::procesarOpcion(int opcion)
@@ -71,11 +69,6 @@ void MenuMantenimiento::procesarOpcion(int opcion)
 			break;
 
 		case 3:
-			break;
-
-		default:
-			cout << "\n" << "Opcion no valida. Intente nuevamente" << endl;
-			mostrar();
 			break;
 	}
 }
