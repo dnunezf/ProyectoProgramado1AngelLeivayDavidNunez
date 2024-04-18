@@ -3,6 +3,7 @@
 
 void MenuPrincipal::mostrar()
 {
+	system("pause");
 	system("cls");
 
 	cout << "Menu Principal" << endl;
@@ -34,6 +35,7 @@ void MenuPrincipal::mostrar()
 		cout << "\n" << e.toString() << endl;
 		mostrar();
 	}
+
 }
 
 void MenuPrincipal::validarOpcion(int opcion)
