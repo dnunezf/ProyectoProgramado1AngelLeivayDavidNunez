@@ -3,21 +3,19 @@
 
 void MenuPrincipal::mostrar()
 {
+	system("pause");
+	system("cls");
+
+	cout << "Menu Principal" << endl;
+	cout << "\n" << "1. Mantenimiento" << endl;
+	cout << "2. Ventas" << endl;
+	cout << "3. Reportes" << endl;
+	cout << "4. Salir" << endl;
+	cout << "\n" << "Ingrese una opcion: " << endl;
+
 	try
 	{
-		system("pause");
-		system("cls");
-
-		cout << "Menu Principal" << endl;
-		cout << "\n" << "1. Mantenimiento" << endl;
-		cout << "2. Ventas" << endl;
-		cout << "3. Reportes" << endl;
-		cout << "4. Salir" << endl;
-		cout << "\n" << "Ingrese una opcion: " << endl;
-
 		int opcion = obtenerValor(1, 4);
-		cin >> opcion;
-
 		procesarOpcion(opcion);
 	}
 	catch (ExcepcionRangoInferior* e)
@@ -33,6 +31,8 @@ void MenuPrincipal::mostrar()
 	catch (ExcepcionValor* e)
 	{
 		cout << "\n" << e->toString() << endl;
+		cin.clear();
+		cin.ignore(255, '\n');
 		mostrar();
 	}
 }
