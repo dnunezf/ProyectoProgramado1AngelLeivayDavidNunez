@@ -1,29 +1,32 @@
 #include "Carrito.h"
 
-Carrito::Carrito()
+template<class Producto>
+Carrito<Producto>::Carrito() : productos(NULL)
+{
+
+}
+
+template<class Producto>
+Carrito<Producto>::~Carrito()
 {
 }
 
-Carrito::~Carrito()
+bool Carrito<Producto>::ingresaProducto()
 {
+    //METODO
 }
 
-bool Carrito::ingresaProducto()
+bool Carrito<Producto>::verificarExistencia()
 {
-    return false;
+    //METODO
 }
 
-bool Carrito::verificarExistencia()
+double Carrito<Producto>::precioTotal()
 {
-    return false;
+    //METODO
 }
 
-double Carrito::precioTotal()
+string Carrito<Producto>::toString()
 {
-    return 0.0;
-}
-
-string Carrito::toString()
-{
-    return string();
+    //METODO
 }

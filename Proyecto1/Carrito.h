@@ -1,15 +1,21 @@
+//IMPLEMENTACION BASE DEL CARRITO
+
 #pragma once
-#include"Producto.h"
+#include"carritoDecorador.h"
+#include"Nodo.h"
 
-//Clase carrito.
-class Carrito {
-private:
+template<class Producto>
 
-public:
-	Carrito();
-	virtual ~Carrito();
-	bool ingresaProducto();
-	bool verificarExistencia();
-	double precioTotal();
-	string toString();
+class Carrito : public CarritoDecorador 
+{
+	private:
+		Nodo<Producto>* productos;
+
+	public:
+		Carrito();
+		virtual ~Carrito();
+		bool ingresaProducto();
+		bool verificarExistencia();
+		double precioTotal();
+		string toString();
 };
