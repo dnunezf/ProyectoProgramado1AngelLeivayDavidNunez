@@ -1,6 +1,6 @@
 //CLASE MenuPrincipal
-
 #pragma once
+
 #include"Menu.h"
 #include"MenuMantenimiento.h"
 #include"MenuVentas.h"

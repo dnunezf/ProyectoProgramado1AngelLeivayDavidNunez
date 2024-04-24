@@ -9,4 +9,8 @@ class MenuProductos : public Menu
 		void mostrar();
 		int obtenerValor(int, int);
 		void procesarOpcion(int opcion);
+		void ingresoProductos();
+		void ingresoConserva();
+		void ingresoAbarrote();
+		void ingresoEmbutido();
 };

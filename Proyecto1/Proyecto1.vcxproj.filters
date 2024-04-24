@@ -72,9 +72,6 @@
     <ClCompile Include="Categoria.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ContenedorProductos.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CarritoDecorador.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -144,6 +141,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ContenedorProductos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

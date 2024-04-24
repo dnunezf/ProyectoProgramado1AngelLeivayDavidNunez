@@ -132,7 +132,6 @@
     <ClCompile Include="CarritoDecorador.cpp" />
     <ClCompile Include="Categoria.cpp" />
     <ClCompile Include="Conserva.cpp" />
-    <ClCompile Include="ContenedorProductos.cpp" />
     <ClCompile Include="Controladora.cpp" />
     <ClCompile Include="Embutido.cpp" />
     <ClCompile Include="Empaque.cpp" />
@@ -161,6 +160,7 @@
     <ClInclude Include="Empaque.h" />
     <ClInclude Include="ExcepcionMenu.h" />
     <ClInclude Include="Fecha.h" />
+    <ClInclude Include="Includes.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuFacturas.h" />
     <ClInclude Include="MenuMantenimiento.h" />
