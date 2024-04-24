@@ -62,6 +62,7 @@ void MenuProductos::procesarOpcion(int opcion) {
     {
         case 1:
             cout << "\n" << "Ingreso Producto/s." << endl;
+
             break;
 
         case 2:
