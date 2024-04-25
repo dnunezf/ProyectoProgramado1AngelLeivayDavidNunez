@@ -89,6 +89,9 @@ void MenuProductos::procesarOpcion(int opcion)
 
         case 3:
             cout << "\n" << "Modificar Producto/s" << endl;
+
+            actualizarProducto();
+
             break;
 
         case 4:
