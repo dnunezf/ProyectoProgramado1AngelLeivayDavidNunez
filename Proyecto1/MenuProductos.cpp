@@ -1,6 +1,6 @@
 #include "MenuProductos.h"
 #include "ExcepcionMenu.h"
-#include"Includes.h"
+#include"Apoyo.h"
 
 //CREACION DEL TEMPLATE contenedorProductos
 ConProductos<Producto> contenedorProductos;
@@ -298,13 +298,13 @@ void MenuProductos::ingresoEmbutido()
         cin >> opcionTripa;
         tripa = (opcionTripa == 'S' || opcionTripa == 's');
         
-        Embutido embutido(codigo, nombreComercial, descripcion, precioCosto, categoria, existencia, limite, fechaIngreso, nacional, peso, perece, nombreAnimal, parteAnimal, marca);
+        Embutido embutido(codigo, nombreComercial, descripcion, precioCosto, categoria, existencia, limite, fechaIngreso, nacional, peso, perece, nombreAnimal, parteAnimal, marca, tripa);
 
         // Crear el objeto de tipo Embutido (CHIP DE EMBUTIDO)
-        Empaque* empaque = new Empaque(tripa);
+        /*Empaque* empaque = new Empaque(tripa);*/
 
         // Agregar el producto al contenedor
-        contenedorProductos.ingresaProducto(embutido);
+        contenedorProductos.ingresaProducto(embutido);  // Arreglar
 
         cout << "\nProducto tipo embutido ingresado correctamente." << endl;
     }
@@ -338,9 +338,33 @@ void MenuProductos::eliminarProducto()
 
 void MenuProductos::actualizarProducto()
 {
-    /*
-    DESARROLLAR
-    */
+    int dat;
+    system("pause");
+    system("cls");
+
+    cout << "Actualizar Producto" << endl;
+    cout << "\nIngrese el codigo del producto a Actualizar: " << endl;
+
+    string codigo;
+    cin >> codigo;
+    cin.ignore();
+
+    cout << "\nQue desea Actualizar" << endl;
+    cout << "1 = Descripcion" << endl;
+    cout << "2 = Precio Costo" << endl;
+    cout << "3 = Existencia" << endl;
+    cout << "4 = Limite" << endl;
+    cout << "\n" << "Ingrese opcion: " << endl;
+    cin >> dat;
+
+    if (contenedorProductos.actualizarProductoPorCodigo(codigo, dat))
+    {
+        cout << "\nProducto actualizado" << endl;
+    }
+    else
+    {
+        cout << "\nNo se encontro producto con codigo: " << codigo << endl;
+    }
 }
 
 void MenuProductos::ingresoProductos()

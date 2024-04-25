@@ -1,5 +1,6 @@
 #pragma once
 #include"Nodo.h"
+#include"Apoyo.h"
 
 template<class Producto>
 
@@ -11,14 +12,13 @@ class ConProductos {
 		ConProductos();
 		ConProductos(const ConProductos&);
 		virtual ~ConProductos();
-		// virtual ~Carrito(); peligroso XD
 		bool ingresaProducto(Producto&);
 		bool existeCodigo(string& codigo);
 		bool verificarExistencia();
 		int size();
 		string toString();
 		bool eliminarProductoPorCodigo(string&);
-		bool actualizarProductoPorCodigo(string&, Producto&);
+		bool actualizarProductoPorCodigo(string&, int);
 };
 
 template<class Producto>
@@ -117,12 +117,29 @@ bool ConProductos<Producto>::eliminarProductoPorCodigo(string& codigo)
 }
 
 template<class Producto>
-bool ConProductos<Producto>::actualizarProductoPorCodigo(std::string& codigo, Producto& nuevoProducto) {
+bool ConProductos<Producto>::actualizarProductoPorCodigo(string& codigo, int cambio) {
 	Nodo<Producto>* pAct = productos;
 
 	while (pAct != nullptr) {
-		if (pAct->obtenerInfo()->getCodigo() == codigo) {
-			pAct->setInfo(nuevoProducto);
+		if (pAct->obtenerInfo()->getCodigo() == codigo) 
+		{
+			switch (cambio)
+			{
+				case 1:
+					pAct->obtenerInfo()->setDescripcion(Apoyo::obtenerDescripcion());
+					break;
+				case 2:
+					pAct->obtenerInfo()->setPrecioCosto(Apoyo::precioCosto());
+					break;
+				case 3:
+					pAct->obtenerInfo()->setExistencia(Apoyo::obtenerDescripcion());
+					break;
+				case 4:
+					pAct->obtenerInfo()->setLimite(Apoyo::obtenerLimite());
+					break;
+				default:
+					break;
+			}
 			return true;
 		}
 		pAct = pAct->obtenerSiguiente();

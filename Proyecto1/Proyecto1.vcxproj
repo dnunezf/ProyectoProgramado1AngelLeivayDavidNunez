@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Abarrote.h" />
+    <ClInclude Include="Apoyo.h" />
     <ClInclude Include="Carne.h" />
     <ClInclude Include="CarritoDecorador.h" />
     <ClInclude Include="Categoria.h" />
@@ -160,7 +161,6 @@
     <ClInclude Include="Empaque.h" />
     <ClInclude Include="ExcepcionMenu.h" />
     <ClInclude Include="Fecha.h" />
-    <ClInclude Include="Includes.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuFacturas.h" />
     <ClInclude Include="MenuMantenimiento.h" />

@@ -5,10 +5,10 @@ Embutido::Embutido() : Carne(), marca(" "), empPtr(NULL)
 
 }
 
-Embutido::Embutido(string cod, string nC, string desc, double pC, string cat, int exist, int lim, Fecha* fI, bool nac, double pes, Perecedero* perec, string nA, string pA, string m) 
+Embutido::Embutido(string cod, string nC, string desc, double pC, string cat, int exist, int lim, Fecha* fI, bool nac, double pes, Perecedero* perec, string nA, string pA, string m, bool trip) 
 	: Carne(cod, nC, desc, pC, cat, exist, lim, fI, nac, pes, perec, nA, pA), marca(m)
 {
-	empPtr = new Empaque; //CREANDO OBJETO TIPO CHIP
+	empPtr = new Empaque(trip); //CREANDO OBJETO TIPO CHIP
 }
 
 Embutido::~Embutido()
