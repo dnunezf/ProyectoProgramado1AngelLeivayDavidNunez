@@ -119,23 +119,31 @@ bool ConProductos<Producto>::eliminarProductoPorCodigo(string& codigo)
 template<class Producto>
 bool ConProductos<Producto>::actualizarProductoPorCodigo(string& codigo, int cambio) {
 	Nodo<Producto>* pAct = productos;
-
+	string descripcion;
+	double precio;
+	int existencia;
+	int limite;
 	while (pAct != nullptr) {
+
 		if (pAct->obtenerInfo()->getCodigo() == codigo) 
 		{
 			switch (cambio)
 			{
 				case 1:
-					pAct->obtenerInfo()->setDescripcion(Apoyo::obtenerDescripcion());
+					descripcion = Apoyo::obtenerDescripcion();
+					pAct->obtenerInfo()->setDescripcion(descripcion);
 					break;
 				case 2:
-					pAct->obtenerInfo()->setPrecioCosto(Apoyo::precioCosto());
+					precio = Apoyo::precioCosto();
+					pAct->obtenerInfo()->setPrecioCosto(precio);
 					break;
 				case 3:
-					pAct->obtenerInfo()->setExistencia(Apoyo::obtenerDescripcion());
+					existencia = Apoyo::obtenerExistencia();
+					pAct->obtenerInfo()->setExistencia(existencia);
 					break;
 				case 4:
-					pAct->obtenerInfo()->setLimite(Apoyo::obtenerLimite());
+					limite = Apoyo::obtenerLimite();
+					pAct->obtenerInfo()->setLimite(limite);
 					break;
 				default:
 					break;

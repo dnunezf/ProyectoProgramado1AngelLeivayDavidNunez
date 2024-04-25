@@ -10,7 +10,7 @@ using namespace std;
 
 class Producto
 {
-	private:
+	protected:
 		string codigo;
 		string nombreComercial;
 		string descripcion;

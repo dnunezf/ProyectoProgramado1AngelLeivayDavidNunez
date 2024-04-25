@@ -5,8 +5,8 @@
 #include"Perecedero.h"
 
 class ProdPerecedero : public Producto
-{
-    private:
+{   
+    protected:
         bool nacional;
         double peso;
         Perecedero* ptrPerecedero; //PUNTERO A PERECEDERO

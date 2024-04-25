@@ -4,9 +4,9 @@
 #include"Carne.h"
 #include"Empaque.h"
 
-class Embutido : Carne
+class Embutido : public Carne
 {
-	private:
+	protected:
 		string marca;
 		Empaque* empPtr; //CHIP
 
