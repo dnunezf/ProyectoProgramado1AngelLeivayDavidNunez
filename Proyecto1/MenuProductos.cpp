@@ -74,6 +74,9 @@ void MenuProductos::procesarOpcion(int opcion)
 
         case 2:
             cout << "\n" << "Eliminar Producto/s" << endl;
+
+            eliminarProducto();
+            
             break;
 
         case 3:
@@ -88,6 +91,9 @@ void MenuProductos::procesarOpcion(int opcion)
 void MenuProductos::ingresoConserva()
 {
     //SE INGRESARAN LOS DETALLES DEL PRODUCTO TIPO CONSERVA
+
+    system("pause");
+    system("cls");
 
     string codigo;
     cout << "\n" << "Ingrese el codigo del producto: " << endl;
@@ -146,6 +152,9 @@ void MenuProductos::ingresoConserva()
 void MenuProductos::ingresoAbarrote()
 {
     //SE INGRESARAN LOS DETALLES DEL PRODUCTO TIPO ABARROTE
+
+    system("pause");
+    system("cls");
 
     string codigo;
     cout << "\n" << "Ingrese el codigo del producto: " << endl;
@@ -215,7 +224,8 @@ void MenuProductos::ingresoAbarrote()
     }
 }
 
-void MenuProductos::ingresoEmbutido() {
+void MenuProductos::ingresoEmbutido() 
+{
     //Se ingresarán los detalles del producto tipo Embutido
 
     string codigo;
@@ -301,6 +311,36 @@ void MenuProductos::ingresoEmbutido() {
     else {
         cout << "\nERROR: Código en uso." << endl;
     }
+}
+
+void MenuProductos::eliminarProducto()
+{
+    system("pause");
+    system("cls");
+
+    cout << "Eliminar Producto" << endl;
+    cout << "\nIngrese el codigo del producto a eliminar: " << endl;
+
+    string codigo;
+    cin >> codigo;
+    cin.ignore();
+
+    if (contenedorProductos.eliminarProductoPorCodigo(codigo))
+    {
+        cout << "\nProducto eliminado" << endl;
+    }
+    else
+    {
+        cout << "\nNo se encontro producto con codigo: " << codigo << endl;
+    }
+    
+}
+
+void MenuProductos::actualizarProducto()
+{
+    /*
+    DESARROLLAR
+    */
 }
 
 void MenuProductos::ingresoProductos()

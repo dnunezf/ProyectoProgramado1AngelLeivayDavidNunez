@@ -13,4 +13,6 @@ class MenuProductos : public Menu
 		void ingresoConserva();
 		void ingresoAbarrote();
 		void ingresoEmbutido();
+		void eliminarProducto();
+		void actualizarProducto();
 };

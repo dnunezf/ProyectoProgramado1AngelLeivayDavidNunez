@@ -17,6 +17,8 @@ class ConProductos {
 		bool verificarExistencia();
 		int size();
 		string toString();
+		bool eliminarProductoPorCodigo(string&);
+		bool actualizarProductoPorCodigo(string&, Producto&);
 };
 
 template<class Producto>
@@ -38,16 +40,18 @@ bool ConProductos<Producto>::ingresaProducto(Producto& info) {
 }
 
 template<class Producto>
-bool ConProductos<Producto>::existeCodigo(string& codigo) {
+bool ConProductos<Producto>::existeCodigo(string& codigo) 
+{
 	Nodo<Producto>* pAct = productos;
-	while (pAct != nullptr) {
-		if (pAct->obtenerInfo()->getCodigo() == codigo) {
-			// Se encontró un producto con el mismo código
+
+	while (pAct != nullptr) 
+	{
+		if (pAct->obtenerInfo()->getCodigo() == codigo) 
+		{
 			return true;
 		}
 		pAct = pAct->obtenerSiguiente();
 	}
-	// No se encontró ningún producto con el mismo código
 	return false;
 }
 
@@ -58,10 +62,12 @@ bool ConProductos<Producto>::verificarExistencia()
 }
 
 template<class Producto>
-int ConProductos<Producto>::size() {
+int ConProductos<Producto>::size() 
+{
 	Nodo<Producto>* pAct = productos;
 	int cont = 0;
-	while (pAct) {
+	while (pAct) 
+	{
 		pAct = pAct->obtenerSiguiente();
 		cont++;
 	}
@@ -69,12 +75,59 @@ int ConProductos<Producto>::size() {
 }
 
 template<class Producto>
-string ConProductos<Producto>::toString() {
+string ConProductos<Producto>::toString() 
+{
 	stringstream s;
+
 	Nodo<Producto>* pAct = productos;
-	while (pAct != NULL) {
+
+	while (pAct != NULL) 
+	{
 		s << pAct->obtenerInfo();
 		pAct = pAct->obtenerSiguiente();
 	}
 	return s.str();
+}
+
+template<class Producto>
+bool ConProductos<Producto>::eliminarProductoPorCodigo(string& codigo)
+{
+	Nodo<Producto>* pAct = productos;
+	Nodo<Producto>* anterior = nullptr;
+
+	while (pAct != nullptr) 
+	{
+		if (pAct->obtenerInfo()->getCodigo() == codigo)
+		{
+			if (anterior == nullptr) 
+			{
+				productos = pAct->obtenerSiguiente();
+			}
+			else 
+			{
+				anterior->setSiguiente(pAct->obtenerSiguiente());
+			}
+			delete pAct;
+			return true;
+		}
+		anterior = pAct;
+		pAct = pAct->obtenerSiguiente();
+	}
+	return false;
+}
+
+template<class Producto>
+bool ConProductos<Producto>::actualizarProductoPorCodigo(std::string& codigo, Producto& nuevoProducto) {
+	Nodo<Producto>* pAct = productos;
+
+	while (pAct != nullptr) {
+		if (pAct->obtenerInfo()->getCodigo() == codigo) {
+			pAct->setInfo(nuevoProducto);
+			return true;
+		}
+		pAct = pAct->obtenerSiguiente();
+	}
+
+	// No se encontró ningún producto con el código especificado
+	return false;
 }
