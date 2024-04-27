@@ -2,18 +2,23 @@
 
 #pragma once
 #include <vector>
-#include "Producto.h"
+#include "ContenedorProductos.h"
 
 class CarritoDecorador
 {
 private:
 	string cedula;
+	ConProductos<Producto>* ptrCon;
 	Producto* ptrPro;
 	CarritoDecorador* ptr;  // Este es el enlace al siguiente decorador.
 public:
 	CarritoDecorador(int, Producto*, CarritoDecorador*);
 	virtual ~CarritoDecorador();
 	void setProDec(CarritoDecorador*);
+	bool agregarProducto(string);
+	bool eliminarProducto(string);
+	bool verificarExistencia(string);
+
 	CarritoDecorador* getProDec();
 	void setCedula(string);
 	string getCedula();

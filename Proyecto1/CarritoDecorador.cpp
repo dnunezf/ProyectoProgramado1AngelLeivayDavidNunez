@@ -14,6 +14,21 @@ void CarritoDecorador::setProDec(CarritoDecorador* ptr2) {
 	ptr = ptr2;
 }
 
+bool CarritoDecorador::agregarProducto(string codigo)
+{
+	return false;
+}
+
+bool CarritoDecorador::eliminarProducto(string)
+{
+	return false;
+}
+
+bool CarritoDecorador::verificarExistencia(string)
+{
+	return false;
+}
+
 CarritoDecorador* CarritoDecorador::getProDec() {
 	return ptr;
 }

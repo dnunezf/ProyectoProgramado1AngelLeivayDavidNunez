@@ -20,6 +20,7 @@ class Nodo
 		T* obtenerInfo() const;
 		void setInfo(T*);
 		void setSiguiente(Nodo<T>*);
+		T* getInfo();
 };
 
 template<class T>
@@ -53,6 +54,11 @@ template<class T>
 void Nodo<T>::setInfo(T* e)
 {
 	info = e;
+}
+
+template<class T>
+T* Nodo<T>::getInfo() {
+	return info;
 }
 
 template<class T>

@@ -33,4 +33,13 @@ public:
 		cin >> des;
 		return des;
 	}
+	static int obtenerCanCompra() {
+		int can;
+		cout << "\nIngrese la cantidad a comprar: " << endl;
+		cin >> can;
+		return can;
+	}
+	static void ComprarProducto() {
+
+	}
 };

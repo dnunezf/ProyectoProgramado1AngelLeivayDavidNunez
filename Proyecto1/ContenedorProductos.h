@@ -1,5 +1,6 @@
 #pragma once
 #include"Nodo.h"
+#include"Producto.h"
 #include"Apoyo.h"
 
 template<class Producto>
@@ -23,6 +24,7 @@ class ConProductos {
 		string obtenerNombreProducto(string&);
 		int obtenerExistenciaProducto(string& codigo);
 		int getCantidadProducto(string& codigo);
+		Producto* getProducto(string);
 
 };
 
@@ -203,6 +205,21 @@ int ConProductos<Producto>::getCantidadProducto(string& codigo)
 	while (pAct != nullptr) {
 		if (pAct->obtenerInfo()->getCodigo() == codigo) {
 			cantidad++;
+		}
+		pAct = pAct->obtenerSiguiente();
+	}
+
+	return cantidad;
+}
+
+template<class Producto>
+inline Producto* ConProductos<Producto>::getProducto(string codigo)
+{
+	Nodo<Producto>* pAct = productos;
+
+	while (pAct != nullptr) {
+		if (pAct->obtenerInfo()->getCodigo() == codigo) {
+			return pAct->obtenerInfo();
 		}
 		pAct = pAct->obtenerSiguiente();
 	}
