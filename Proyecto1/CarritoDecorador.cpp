@@ -6,6 +6,10 @@ CarritoDecorador::CarritoDecorador(int ced, Producto* pro, CarritoDecorador* dec
 	ptr = dec;
 }
 
+CarritoDecorador::CarritoDecorador() {
+
+}
+
 CarritoDecorador:: ~CarritoDecorador() {
 
 }
@@ -14,8 +18,20 @@ void CarritoDecorador::setProDec(CarritoDecorador* ptr2) {
 	ptr = ptr2;
 }
 
+
+// Nota Esto esto comprueba que tengamos el producto y la existencia, solo es de en el main agregar
+// el producto y despues se asocia para generar el efecto de lista.
 bool CarritoDecorador::agregarProducto(string codigo)
 {
+	int can = 0;
+	if (ptrCon->existeCodigo(codigo)) {
+		can = Apoyo::obtenerCanCompra();
+		if (can <= ptrCon->obtenerExistenciaProducto(codigo)) {
+			can = ptrCon->obtenerExistenciaProducto(codigo) - can;
+			ptrCon->setCanProducto(can);
+			return true;
+		}
+	}
 	return false;
 }
 
@@ -31,6 +47,11 @@ bool CarritoDecorador::verificarExistencia(string)
 
 CarritoDecorador* CarritoDecorador::getProDec() {
 	return ptr;
+}
+
+void CarritoDecorador::setProDec(CarritoDecorador* ptr2)
+{
+	ptr = ptr2;
 }
 
 void CarritoDecorador::setCedula(string ced) {

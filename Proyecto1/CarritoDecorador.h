@@ -13,6 +13,7 @@ private:
 	CarritoDecorador* ptr;  // Este es el enlace al siguiente decorador.
 public:
 	CarritoDecorador(int, Producto*, CarritoDecorador*);
+	CarritoDecorador();
 	virtual ~CarritoDecorador();
 	void setProDec(CarritoDecorador*);
 	bool agregarProducto(string);
@@ -20,6 +21,7 @@ public:
 	bool verificarExistencia(string);
 
 	CarritoDecorador* getProDec();
+	void setProDec(CarritoDecorador*);
 	void setCedula(string);
 	string getCedula();
 	virtual double precioTotal();

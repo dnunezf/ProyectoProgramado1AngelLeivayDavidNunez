@@ -21,6 +21,7 @@ class ConProductos {
 		bool eliminarProductoPorCodigo(string&);
 		bool actualizarProductoPorCodigo(string&, int);
 
+		void setCanProducto(int);
 		string obtenerNombreProducto(string&);
 		int obtenerExistenciaProducto(string& codigo);
 		int getCantidadProducto(string& codigo);
@@ -166,6 +167,19 @@ bool ConProductos<Producto>::actualizarProductoPorCodigo(string& codigo, int cam
 }
 
 template<class Producto>
+inline void ConProductos<Producto>::setCanProducto(int exis)
+{
+	Nodo<Producto>* pAct = productos;
+
+	while (pAct != nullptr) {
+		if (pAct->obtenerInfo()->getCodigo() == codigo) {
+			pAct->obtenerInfo()->setExistencia(exis);
+		}
+		pAct = pAct->obtenerSiguiente();
+	}
+}
+
+template<class Producto>
 string ConProductos<Producto>::obtenerNombreProducto(string& codigo)
 {
 	Nodo<Producto>* pAct = productos;
@@ -223,6 +237,6 @@ inline Producto* ConProductos<Producto>::getProducto(string codigo)
 		}
 		pAct = pAct->obtenerSiguiente();
 	}
-
-	return cantidad;
+	cerr << "NO SE ENCUENTRA EL PRODUCTO" << endl;
+	return NULL;
 }
