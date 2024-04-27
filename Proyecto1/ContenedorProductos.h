@@ -19,6 +19,11 @@ class ConProductos {
 		string toString();
 		bool eliminarProductoPorCodigo(string&);
 		bool actualizarProductoPorCodigo(string&, int);
+
+		string obtenerNombreProducto(string&);
+		int obtenerExistenciaProducto(string& codigo);
+		int getCantidadProducto(string& codigo);
+
 };
 
 template<class Producto>
@@ -61,6 +66,7 @@ bool ConProductos<Producto>::verificarExistencia()
 	return productos != nullptr;
 }
 
+/*CUENTA LA CANTIDAD DE PRODUCTOS TOTALES INGRESADOS*/
 template<class Producto>
 int ConProductos<Producto>::size() 
 {
@@ -155,4 +161,51 @@ bool ConProductos<Producto>::actualizarProductoPorCodigo(string& codigo, int cam
 
 	// No se encontró ningún producto con el código especificado
 	return false;
+}
+
+template<class Producto>
+string ConProductos<Producto>::obtenerNombreProducto(string& codigo)
+{
+	Nodo<Producto>* pAct = productos;
+
+	while (pAct != nullptr) {
+		if (pAct->obtenerInfo()->getCodigo() == codigo) {
+			return pAct->obtenerInfo()->getNombreComercial();
+		}
+		pAct = pAct->obtenerSiguiente();
+	}
+
+	return "";
+}
+
+template<class Producto>
+int ConProductos<Producto>::obtenerExistenciaProducto(string& codigo)
+{
+	Nodo<Producto>* pAct = productos;
+
+	while (pAct != nullptr) {
+		if (pAct->obtenerInfo()->getCodigo() == codigo) {
+			return pAct->obtenerInfo()->getExistencia();
+		}
+		pAct = pAct->obtenerSiguiente();
+	}
+
+	return -1;
+}
+
+/*CUENTA LA CANTIDAD INGRESADA DE UN UNICO PRODUCTO*/
+template<class Producto>
+int ConProductos<Producto>::getCantidadProducto(string& codigo)
+{
+	Nodo<Producto>* pAct = productos;
+	int cantidad = 0;
+
+	while (pAct != nullptr) {
+		if (pAct->obtenerInfo()->getCodigo() == codigo) {
+			cantidad++;
+		}
+		pAct = pAct->obtenerSiguiente();
+	}
+
+	return cantidad;
 }
