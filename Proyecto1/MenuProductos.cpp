@@ -237,6 +237,9 @@ void MenuProductos::ingresoAbarrote()
 
 void MenuProductos::ingresoEmbutido() 
 {
+    system("pause");
+    system("cls");
+
     //Se ingresarán los detalles del producto tipo Embutido
 
     string codigo;
@@ -311,11 +314,8 @@ void MenuProductos::ingresoEmbutido()
         
         Embutido embutido(codigo, nombreComercial, descripcion, precioCosto, categoria, existencia, limite, fechaIngreso, nacional, peso, perece, nombreAnimal, parteAnimal, marca, tripa);
 
-        // Crear el objeto de tipo Embutido (CHIP DE EMBUTIDO)
-        /*Empaque* empaque = new Empaque(tripa);*/
-
         // Agregar el producto al contenedor
-        contenedorProductos.ingresaProducto(embutido);  // Arreglar
+        contenedorProductos.ingresaProducto(embutido); 
 
         cout << "\nProducto tipo embutido ingresado correctamente." << endl;
     }
@@ -381,15 +381,15 @@ void MenuProductos::actualizarProducto()
 
 void MenuProductos::ingresoProductos()
 {
+    system("pause");
+    system("cls");
+
+    cout << "Ingrese los detalles de los productos: " << endl;
+
+    int opcionTipoProducto;
+
     try
     {
-        system("pause");
-        system("cls");
-
-        cout << "Ingrese los detalles de los productos: " << endl;
-
-        int opcionTipoProducto;
-
         do
         {
             cout << "\nElija el tipo de producto que desea ingresar:" << endl;
@@ -398,57 +398,47 @@ void MenuProductos::ingresoProductos()
             cout << "3. Embutido" << endl;
             cout << "4. Terminar ingreso de productos" << endl;
             cout << "\n" << "Ingrese una opcion: " << endl;
-            cin >> opcionTipoProducto;
+            opcionTipoProducto = obtenerValor(1, 4);
 
             switch (opcionTipoProducto)
             {
                 case 1:
-                {
                     ingresoConserva();
                     break;
-                }
                 case 2:
-                {
                     ingresoAbarrote();
                     break;
-                }
                 case 3:
-                {
                     ingresoEmbutido();
                     break;
-                }
                 case 4:
-                {
                     cout << "\n" << "Terminando ingreso de productos..." << endl;
                     break;
-                }
                 default:
-                {
                     throw new ExcepcionRangoInferior(1, 4, opcionTipoProducto);
-                }
             }
         } while (opcionTipoProducto != 4);
-
-        cout << "\n" << "Productos ingresados correctamente." << endl;
     }
     catch (ExcepcionRangoInferior* e)
     {
         cout << e->toString() << endl;
-        ingresoProductos(); 
+        ingresoProductos();
     }
     catch (ExcepcionRangoSuperior* e)
     {
         cout << "\n" << e->toString() << endl;
-        ingresoProductos(); 
+        ingresoProductos();
     }
     catch (ExcepcionValor* e)
     {
         cout << "\n" << e->toString() << endl;
 
-        // Limpia el estado de error de la entrada estándar, eliminando cualquier carácter del buffer de entrada
+        //LIMPIA ESTADO DE ERROR DE LA ENTRADA ESTANDAR, ELIMINA CUALQUIER CARACTER DEL BUFER ENTRADA
         cin.clear();
         cin.ignore(255, '\n');
 
         ingresoProductos();
     }
+
+    cout << "\n" << "Productos ingresados correctamente." << endl;
 }
