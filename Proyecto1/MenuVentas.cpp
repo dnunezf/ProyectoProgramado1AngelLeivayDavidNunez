@@ -2,18 +2,19 @@
 #include "ExcepcionMenu.h"
 #include "Apoyo.h"
 #include "CarritoDecorador.h"
-#include"ContenedorProductos.h"
-#include"ContenedorFacturas.h"
+#include "ContenedorProductos.h"
+#include "ContenedorFacturas.h"
+#include <iostream>
 
 void MenuVentas::mostrar()
 {
     system("pause");
     system("cls");
 
-    cout << "Menu Ventas" << endl;
-    cout << "\n" << "1. Crear Factura Nueva" << endl;
-    cout << "2. Retornar" << endl;
-    cout << "\n" << "Ingrese una opcion: " << endl;
+    std::cout << "Menu Ventas" << std::endl;
+    std::cout << "\n1. Crear Factura Nueva" << std::endl;
+    std::cout << "2. Retornar" << std::endl;
+    std::cout << "\nIngrese una opcion: " << std::endl;
 
     try
     {
@@ -22,22 +23,19 @@ void MenuVentas::mostrar()
     }
     catch (ExcepcionRangoInferior* e)
     {
-        cout << e->toString() << endl;
+        std::cout << e->toString() << std::endl;
         mostrar();
     }
     catch (ExcepcionRangoSuperior* e)
     {
-        cout << "\n" << e->toString() << endl;
+        std::cout << "\n" << e->toString() << std::endl;
         mostrar();
     }
     catch (ExcepcionValor* e)
     {
-        cout << "\n" << e->toString() << endl;
-
-        //LIMPIA ESTADO DE ERROR DE LA ENTRADA ESTANDAR, ELIMINA CUALQUIER CARACTER DEL BUFER ENTRADA
-        cin.clear();
-        cin.ignore(255, '\n');
-
+        std::cout << "\n" << e->toString() << std::endl;
+        std::cin.clear();
+        std::cin.ignore(255, '\n');
         mostrar();
     }
 }
@@ -46,10 +44,11 @@ int MenuVentas::obtenerValor(int min, int max)
 {
     int valor = 0;
 
-    if (cin >> valor)
+    if (std::cin >> valor)
     {
         if (valor < min) throw new ExcepcionRangoInferior(min, max, valor);
         if (valor > max) throw new ExcepcionRangoSuperior(min, max, valor);
+        return valor; 
     }
     else
     {
@@ -61,23 +60,29 @@ void MenuVentas::procesarOpcion(int opcion)
 {
     CarritoDecorador* Carrito = new CarritoDecorador();
     Carrito->setConPro(&contenedorProductos);
-    string codCompra;
+    std::string codCompra;
+    int opcionCarrito;
+
     switch (opcion)
     {
-        case 1:
-            do {
-                cout << "\n" << "Crear Factura Nueva." << endl;
-                codCompra = Apoyo::CompraCod();
-                if (Carrito->agregarProducto(codCompra)) {
-                    Carrito->setProducto(contenedorProductos.getProducto(codCompra));
-                    Carrito->setProDec(Carrito);
-                }
-                cout << "Continuar [S = 1] [N = 0]" << endl;
-                cin >> opcion;
-            } while (opcion == 1);
-            break;
+    case 1:
+        do {
+            std::cout << "\nCrear Factura Nueva." << std::endl;
+            codCompra = Apoyo::CompraCod();
+            if (Carrito->agregarProducto(codCompra)) {
+                Carrito->setProducto(contenedorProductos.getProducto(codCompra));
+                Carrito->setProDec(Carrito);
+            }
+            std::cout << "Continuar [S = 1] [N = 0]" << std::endl;
+            std::cin >> opcionCarrito;
+        } while (opcionCarrito == 1);
+        break;
 
-        case 2:
-            break;
+    case 2:
+        break;
+
+    default:
+        std::cout << "Opción no válida. Por favor, ingrese 1 para crear una factura nueva." << std::endl;
+        break;
     }
 }
