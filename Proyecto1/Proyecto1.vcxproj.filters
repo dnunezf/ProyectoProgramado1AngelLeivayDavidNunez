@@ -75,6 +75,9 @@
     <ClCompile Include="CarritoDecorador.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Factura.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controladora.h">
@@ -144,6 +147,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Apoyo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Factura.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

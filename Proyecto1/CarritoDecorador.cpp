@@ -28,7 +28,7 @@ bool CarritoDecorador::agregarProducto(string codigo)
 		can = Apoyo::obtenerCanCompra();
 		if (can <= ptrCon->obtenerExistenciaProducto(codigo)) {
 			can = ptrCon->obtenerExistenciaProducto(codigo) - can;
-			ptrCon->setCanProducto(can);
+			ptrCon->setCanProducto(codigo, can);
 			return true;
 		}
 	}
@@ -49,17 +49,25 @@ CarritoDecorador* CarritoDecorador::getProDec() {
 	return ptr;
 }
 
-void CarritoDecorador::setProDec(CarritoDecorador* ptr2)
-{
-	ptr = ptr2;
-}
-
 void CarritoDecorador::setCedula(string ced) {
 	cedula = ced;
 }
 
 string CarritoDecorador::getCedula() {
 	return cedula;
+}
+
+string CarritoDecorador::getNombres()
+{
+	stringstream s;
+	if (ptr != NULL) {
+		s << ptrPro->getNombreComercial();
+		s << this->getProDec()->getNombres();
+	}
+	else {
+		s << ptrPro->getPrecioCosto();
+	}
+	return s.str();
 }
 
 double CarritoDecorador::precioTotal() {
