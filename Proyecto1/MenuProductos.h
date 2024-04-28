@@ -15,4 +15,5 @@ class MenuProductos : public Menu
 		void ingresoEmbutido();
 		void eliminarProducto();
 		void actualizarProducto();
+		void creacionFactura();
 };

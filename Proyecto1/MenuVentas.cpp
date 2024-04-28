@@ -4,6 +4,7 @@
 #include "CarritoDecorador.h"
 #include "ContenedorProductos.h"
 #include "ContenedorFacturas.h"
+#include "MenuProductos.h"
 #include <iostream>
 
 void MenuVentas::mostrar()
@@ -58,38 +59,19 @@ int MenuVentas::obtenerValor(int min, int max)
 
 void MenuVentas::procesarOpcion(int opcion)
 {
-    CarritoDecorador* Carrito = new CarritoDecorador();
-
-    Carrito->setConPro(&contenedorProductos);
-    std::string codCompra;
-    int opcionCarrito;
+    MenuProductos menuProductos;
 
     switch (opcion)
     {
     case 1:
-        do {
-            cout << "\nCrear Factura Nueva." << std::endl;
-            codCompra = Apoyo::CompraCod();
-            if (Carrito->agregarProducto(codCompra)) {
-                Carrito->setProducto(contenedorProductos.getProducto(codCompra));
-                Carrito->setProDec(Carrito);
-            }
-            else {
-                cerr << "NO EXISTE EL PRODUCTO" << endl;
-            }
-            cout << "Continuar [S = 1] [N = 0]" << std::endl;
-            cin >> opcionCarrito;
-        } while (opcionCarrito == 1);
-        /*Factura* fac = new Factura();
-        fac->setCarPtr(*Carrito);
-        contenedorFacturas.IngresarFactura(*fac);*/
+        menuProductos.creacionFactura();
         break;
 
     case 2:
         break;
 
     default:
-        std::cout << "Opción no válida. Por favor, ingrese 1 para crear una factura nueva." << std::endl;
+        cout << "Opción no válida. Por favor, ingrese 1 para crear una factura nueva." << std::endl;
         break;
     }
 }
