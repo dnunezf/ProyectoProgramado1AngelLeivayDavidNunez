@@ -23,4 +23,6 @@ class MenuProductos : public Menu
 		void actualizarProducto();
 		void creacionFactura();
 		void reporteProductos();
+		void reporteProductosCategoria();
+		void reporteProductosExistencia();
 };

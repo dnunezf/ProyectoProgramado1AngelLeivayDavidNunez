@@ -115,7 +115,7 @@ string Producto::toString()
     s << "\n" << "Precio de Costo: " << precioCosto << endl;
     s << "\n" << "Categoria: " << categoria << endl;
     s << "\n" << "Existencia: " << existencia << endl;
-    s << "\n" << "Limite: " << categoria << endl;
+    s << "\n" << "Limite: " << limite << endl;
     
     s << "\n" << "Fecha de Ingreso: " << fechaIngreso->toString() << endl;
 

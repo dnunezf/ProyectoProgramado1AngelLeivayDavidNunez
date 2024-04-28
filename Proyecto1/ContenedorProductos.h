@@ -33,6 +33,8 @@ class ConProductos {
 		int getCantidadProducto(string& codigo);
 		Producto* getProducto(string);
 
+		string mostrarCategoria(string categoria);
+		string mostrarMinimoExistencia();
 };
 
 template<class Producto>
@@ -245,6 +247,43 @@ inline Producto* ConProductos<Producto>::getProducto(string codigo)
 	}
 	cerr << "NO SE ENCUENTRA EL PRODUCTO" << endl;
 	return NULL;
+}
+
+template<class Producto>
+string ConProductos<Producto>::mostrarCategoria(string categoria)
+{
+	stringstream s;
+
+	Nodo<Producto>* pAct = productos;
+
+	while (pAct != nullptr)
+	{
+		// Verificar si el producto actual pertenece a la categoría deseada
+		if (pAct->obtenerInfo()->getCategoria() == categoria)
+		{
+			s << pAct->obtenerInfo()->toString() << endl;
+		}
+		pAct = pAct->obtenerSiguiente();
+	}
+	return s.str();
+}
+
+template<class Producto>
+string ConProductos<Producto>::mostrarMinimoExistencia()
+{
+	stringstream s;
+
+	Nodo<Producto>* pAct = productos;
+
+	while (pAct != nullptr)
+	{
+		if (pAct->obtenerInfo()->getExistencia() < pAct->obtenerInfo()->getLimite())
+		{
+			s << pAct->obtenerInfo()->toString() << endl;
+		}
+		pAct = pAct->obtenerSiguiente();
+	}
+	return s.str();
 }
 
 //Definimos el template

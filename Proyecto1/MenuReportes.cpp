@@ -62,40 +62,37 @@ int MenuReportes::obtenerValor(int min, int max)
 
 void MenuReportes::procesarOpcion(int opcion)
 {
-    system("pause");
-    system("cls");
-
     MenuProductos mp;
 
     switch (opcion)
     {
-    case 1:
-        cout << "Reportar todos los productos." << endl;
-        mp.reporteProductos();
-        break;
+        case 1:
+            cout << "Reportar todos los productos." << endl;
+            mp.reporteProductos();
+            break;
 
-    case 2:
-        cout << "Reportar solo los productos de una determinada categoria" << endl;
-        // Aquí debes agregar la lógica para el reporte de una categoría específica
-        break;
+        case 2:
+            cout << "Reportar solo los productos de una determinada categoria" << endl;
+            mp.reporteProductosCategoria();
+            break;
 
-    case 3:
-        cout << "Reportar los productos que estan por debajo del minimo de su existencia" << endl;
-        // Aquí debes agregar la lógica para el reporte de productos por debajo del mínimo de existencia
-        break;
+        case 3:
+            cout << "Reportar los productos que estan por debajo del minimo de su existencia" << endl;
+            mp.reporteProductosExistencia();
+            break;
 
-    case 4:
-        cout << "Reportar las facturas de un determinado cliente por su cedula" << endl;
-        // Aquí debes agregar la lógica para el reporte de facturas por cédula de cliente
-        break;
+        case 4:
+            cout << "Reportar las facturas de un determinado cliente por su cedula" << endl;
+            // Aquí debes agregar la lógica para el reporte de facturas por cédula de cliente
+            break;
 
-    case 5:
-        cout << "Reportar las cedulas de los 5 mejores clientes que compran en el minisuper." << endl;
-        // Aquí debes agregar la lógica para el reporte de las cédulas de los mejores clientes
-        break;
+        case 5:
+            cout << "Reportar las cedulas de los 5 mejores clientes que compran en el minisuper." << endl;
+            // Aquí debes agregar la lógica para el reporte de las cédulas de los mejores clientes
+            break;
 
-    case 6:
-        // No hay nada que procesar aquí, simplemente retornará al menú anterior.
-        break;
+        case 6:
+            // No hay nada que procesar aquí, simplemente retornará al menú anterior.
+            break;
     }
 }

@@ -420,7 +420,7 @@ void MenuProductos::creacionFactura()
         if (opcionCarrito != 0 && opcionCarrito != 1) {
             cerr << "\nEntrada invalida. Introduzca 0 o 1." << endl;
         }
-    } while (opcionCarrito != 1);
+    } while (opcionCarrito != 0);
 
     fac->setCarritoDecorador(*Carrito);
     contenedorFacturas.IngresarFactura(*fac);
@@ -430,11 +430,50 @@ void MenuProductos::creacionFactura()
 
 void MenuProductos::reporteProductos()
 {
+    system("pause");
+    system("cls");
+
     cout << "Reportar todos los productos." << endl;
 
     if (contenedorProductos.verificarExistencia()) {
         cout << "\n" << "Productos ingresados:" << endl;
         cout << "\n" << contenedorProductos.toString() << endl;
+    }
+    else {
+        cout << "\n" << "No hay productos ingresados." << endl;
+    }
+}
+
+void MenuProductos::reporteProductosCategoria()
+{
+    system("pause");
+    system("cls");
+
+    cout << "Reportar productos por categoria." << endl;
+
+    if (contenedorProductos.verificarExistencia()) {
+        string categoria;
+        cout << "\nIngrese la categoria de productos que desea reportar: ";
+        cin >> categoria;
+
+        cout << contenedorProductos.mostrarCategoria(categoria) << endl;
+    }
+    else {
+        cout << "\n" << "No hay productos ingresados." << endl;
+    }
+
+    
+}
+
+void MenuProductos::reporteProductosExistencia()
+{
+    system("pause");
+    system("cls");
+
+    cout << "Reportando productos debajo del minimo de su existencia" << endl;
+
+    if (contenedorProductos.verificarExistencia()) {
+        cout << contenedorProductos.mostrarMinimoExistencia() << endl;
     }
     else {
         cout << "\n" << "No hay productos ingresados." << endl;
