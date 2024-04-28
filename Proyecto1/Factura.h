@@ -24,5 +24,4 @@ public:
     string toString();
     void setPrecioTotal();
     void setCarritoDecorador(CarritoDecorador&);
-    void autoLlenar();
 };

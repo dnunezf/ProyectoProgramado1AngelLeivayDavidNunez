@@ -39,16 +39,16 @@ void Factura::calcularPrecioConIva()
     PrecioConIva = (PrecioBase * Iva) + PrecioBase;
 }
 
-//string Factura::toString()
-//{
-//    calcularPrecioConIva();
-//    stringstream s;
-//    s << "---LISTA DE PRODUCTOS---" << endl
-//        << carPtr->getNombres() << endl;
-//        /*<< "El Precio base de los productos es: " << PrecioBase << endl
-//        << "El Precio con el IVA de 13% incluido es de: " << PrecioConIva << endl;*/
-//    return s.str();
-//}
+string Factura::toString()
+{
+    calcularPrecioConIva();
+    stringstream s;
+    s << "---LISTA DE PRODUCTOS---" << endl
+        << carPtr->getNombres() << endl;
+        /*<< "El Precio base de los productos es: " << PrecioBase << endl
+        << "El Precio con el IVA de 13% incluido es de: " << PrecioConIva << endl;*/
+    return s.str();
+}
 
 void Factura::setPrecioTotal()
 {
@@ -59,12 +59,4 @@ void Factura::setPrecioTotal()
 void Factura::setCarritoDecorador(CarritoDecorador& carPtr2)
 {
     carPtr = &carPtr2;
-}
-
-void Factura::autoLlenar()
-{
-    if (carPtr != nullptr) {
-        PrecioBase = carPtr->precioTotal();
-        calcularPrecioConIva();
-    }
 }

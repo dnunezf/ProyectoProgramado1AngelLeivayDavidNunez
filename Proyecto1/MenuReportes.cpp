@@ -1,9 +1,3 @@
-/*
-  Autores:
-  Ángel Arián Leiva Abarca ()
-  David Alberto Núñez Franco
-*/
-
 #include "MenuReportes.h"
 #include "ContenedorProductos.h"
 #include "ExcepcionMenu.h"
@@ -58,6 +52,7 @@ int MenuReportes::obtenerValor(int min, int max)
     {
         if (valor < min) throw new ExcepcionRangoInferior(min, max, valor);
         if (valor > max) throw new ExcepcionRangoSuperior(min, max, valor);
+        return valor; // Necesitas devolver el valor si todo está bien.
     }
     else
     {
@@ -67,34 +62,40 @@ int MenuReportes::obtenerValor(int min, int max)
 
 void MenuReportes::procesarOpcion(int opcion)
 {
+    system("pause");
+    system("cls");
+
     MenuProductos mp;
 
     switch (opcion)
     {
-        case 1:
-            cout << "Reportar todos los productos." << endl;
+    case 1:
+        cout << "Reportar todos los productos." << endl;
+        mp.reporteProductos();
+        break;
 
-            mp.reporteProductos();
+    case 2:
+        cout << "Reportar solo los productos de una determinada categoria" << endl;
+        // Aquí debes agregar la lógica para el reporte de una categoría específica
+        break;
 
-            break;
+    case 3:
+        cout << "Reportar los productos que estan por debajo del minimo de su existencia" << endl;
+        // Aquí debes agregar la lógica para el reporte de productos por debajo del mínimo de existencia
+        break;
 
-        case 2:
-            cout << "Reportar solo los productos de una determinada categoria" << endl;
-            break;
+    case 4:
+        cout << "Reportar las facturas de un determinado cliente por su cedula" << endl;
+        // Aquí debes agregar la lógica para el reporte de facturas por cédula de cliente
+        break;
 
-        case 3:
-            cout << "Reportar los productos que estan por debajo del minimo de su existencia" << endl;
-            break;
+    case 5:
+        cout << "Reportar las cedulas de los 5 mejores clientes que compran en el minisuper." << endl;
+        // Aquí debes agregar la lógica para el reporte de las cédulas de los mejores clientes
+        break;
 
-        case 4:
-            cout << "Reportar las facturas de un determinado cliente por su cedula" << endl;
-            break;
-
-        case 5:
-            cout << "Reportar las cedulas de los 5 mejores clientes que compran en el minisuper." << endl;
-            break;
-
-        case 6:
-            break;
+    case 6:
+        // No hay nada que procesar aquí, simplemente retornará al menú anterior.
+        break;
     }
 }

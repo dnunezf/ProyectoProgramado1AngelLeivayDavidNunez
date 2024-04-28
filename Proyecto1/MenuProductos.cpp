@@ -420,12 +420,12 @@ void MenuProductos::creacionFactura()
         if (opcionCarrito != 0 && opcionCarrito != 1) {
             cerr << "\nEntrada invalida. Introduzca 0 o 1." << endl;
         }
-    } while (opcionCarrito != 0 && opcionCarrito != 1);
+    } while (opcionCarrito != 1);
 
     fac->setCarritoDecorador(*Carrito);
-    //fac->autoLlenar();
     contenedorFacturas.IngresarFactura(*fac);
-    cout << "Factura Generada Correctamente" << endl;
+
+    cout << "\n" << "Factura Generada Correctamente" << endl;
 }
 
 void MenuProductos::reporteProductos()
@@ -434,7 +434,7 @@ void MenuProductos::reporteProductos()
 
     if (contenedorProductos.verificarExistencia()) {
         cout << "\n" << "Productos ingresados:" << endl;
-        cout << contenedorProductos.toString() << endl;
+        cout << "\n" << contenedorProductos.toString() << endl;
     }
     else {
         cout << "\n" << "No hay productos ingresados." << endl;
