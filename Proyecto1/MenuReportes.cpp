@@ -2,6 +2,7 @@
 #include "ContenedorProductos.h"
 #include "ExcepcionMenu.h"
 #include "MenuProductos.h"
+#include "ContenedorFacturas.h"
 
 void MenuReportes::mostrar()
 {
@@ -63,6 +64,8 @@ int MenuReportes::obtenerValor(int min, int max)
 void MenuReportes::procesarOpcion(int opcion)
 {
     MenuProductos mp;
+    Factura* factu = new Factura();
+    string ced;
 
     switch (opcion)
     {
@@ -83,7 +86,9 @@ void MenuReportes::procesarOpcion(int opcion)
 
         case 4:
             cout << "Reportar las facturas de un determinado cliente por su cedula" << endl;
-            // Aquí debes agregar la lógica para el reporte de facturas por cédula de cliente
+            ced = Apoyo::obtenerCedulaCliente();
+            factu = contenedorFacturas.getFacturaCedula(ced);
+            cout << factu->toString();
             break;
 
         case 5:

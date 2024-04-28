@@ -51,4 +51,11 @@ public:
 		cin >> cod;
 		return cod;
 	}
+
+	static string obtenerCedulaCliente() {
+		string ced;
+		cout << "\nIngrese la cedula del cliente: " << endl;
+		cin >> ced;
+		return ced;
+	}
 };

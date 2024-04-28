@@ -390,24 +390,33 @@ void MenuProductos::actualizarProducto()
 
 void MenuProductos::creacionFactura()
 {
-    CarritoDecorador* Carrito = new CarritoDecorador();
+    // Crear un nuevo CarritoDecorador con cédula y sin productos
+    string cedulaCliente = Apoyo::obtenerCedulaCliente(); // Suponiendo que tienes una función para obtener la cédula del cliente
+    CarritoDecorador* carrito = new CarritoDecorador(cedulaCliente, nullptr, nullptr);
 
-    Carrito->setConPro(&contenedorProductos);
+    // Establecer el contenedor de productos en el carrito
+    carrito->setConPro(&contenedorProductos);
+
     std::string codCompra;
     int opcionCarrito;
 
     Factura* fac = new Factura();
 
-    do 
+    do
     {
         cout << "\nCrear Factura Nueva." << endl;
 
         codCompra = Apoyo::CompraCod();
 
-        if (Carrito->agregarProducto(codCompra)) 
+        if (carrito->agregarProducto(codCompra))
         {
-            Carrito->setProducto(contenedorProductos.getProducto(codCompra));
-            Carrito->setProDec(Carrito);
+            // Obtener el producto del contenedor y asignarlo al carrito
+            Producto* producto = contenedorProductos.getProducto(codCompra);
+            carrito->setProducto(producto);
+
+            // Decorar el carrito existente con el nuevo producto
+            CarritoDecorador* nuevoCarrito = new CarritoDecorador(cedulaCliente, producto, carrito);
+            carrito = nuevoCarrito;
         }
         else {
             cerr << "NO EXISTE EL PRODUCTO" << endl;
@@ -422,11 +431,16 @@ void MenuProductos::creacionFactura()
         }
     } while (opcionCarrito != 0);
 
-    fac->setCarritoDecorador(*Carrito);
+    // Asignar el carrito completo a la factura
+    fac->setCarritoDecorador(*carrito);
+    cout<<carrito->toString();
+
+    // Agregar la factura al contenedor de facturas
     contenedorFacturas.IngresarFactura(*fac);
 
     cout << "\n" << "Factura Generada Correctamente" << endl;
 }
+
 
 void MenuProductos::reporteProductos()
 {

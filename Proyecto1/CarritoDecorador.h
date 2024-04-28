@@ -18,7 +18,7 @@ private:
 	Producto* ptrPro;
 	CarritoDecorador* ptr;  // Este es el enlace al siguiente decorador.
 public:
-	CarritoDecorador(int, Producto*, CarritoDecorador*);
+	CarritoDecorador(string, Producto*, CarritoDecorador*);
 	CarritoDecorador();
 	virtual ~CarritoDecorador();
 	void setConPro(ConProductos<Producto>*);
