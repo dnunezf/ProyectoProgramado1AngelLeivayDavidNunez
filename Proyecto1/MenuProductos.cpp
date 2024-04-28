@@ -386,7 +386,7 @@ void MenuProductos::creacionFactura()
     std::string codCompra;
     int opcionCarrito;
 
-    Factura* fac = new Factura();
+    //Factura* fac = new Factura();
 
     do {
         cout << "\nCrear Factura Nueva." << std::endl;
@@ -402,8 +402,21 @@ void MenuProductos::creacionFactura()
         cin >> opcionCarrito;
     } while (opcionCarrito == 1);
 
-    fac->setCarPtr(*Carrito);
-    contenedorFacturas.IngresarFactura(*fac);
+    //fac->setCarPtr(*Carrito);
+    //contenedorFacturas.IngresarFactura(*fac);
+}
+
+void MenuProductos::reporteProductos()
+{
+    cout << "Reportar todos los productos." << endl;
+
+    if (contenedorProductos.verificarExistencia()) {
+        cout << "\n" << "Productos ingresados:" << endl;
+        cout << contenedorProductos.toString() << endl;
+    }
+    else {
+        cout << "\n" << "No hay productos ingresados." << endl;
+    }
 }
 
 void MenuProductos::ingresoProductos()

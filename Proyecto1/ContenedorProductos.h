@@ -84,15 +84,15 @@ int ConProductos<Producto>::size()
 }
 
 template<class Producto>
-string ConProductos<Producto>::toString() 
+string ConProductos<Producto>::toString()
 {
 	stringstream s;
 
 	Nodo<Producto>* pAct = productos;
 
-	while (pAct != NULL) 
+	while (pAct != nullptr)
 	{
-		s << pAct->obtenerInfo();
+		s << pAct->obtenerInfo()->toString() << endl; 
 		pAct = pAct->obtenerSiguiente();
 	}
 	return s.str();

@@ -16,4 +16,5 @@ class MenuProductos : public Menu
 		void eliminarProducto();
 		void actualizarProducto();
 		void creacionFactura();
+		void reporteProductos();
 };

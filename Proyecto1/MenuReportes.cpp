@@ -1,6 +1,7 @@
 #include "MenuReportes.h"
 #include "ContenedorProductos.h"
 #include "ExcepcionMenu.h"
+#include "MenuProductos.h"
 
 void MenuReportes::mostrar()
 {
@@ -60,18 +61,15 @@ int MenuReportes::obtenerValor(int min, int max)
 
 void MenuReportes::procesarOpcion(int opcion)
 {
+    MenuProductos mp;
+
     switch (opcion)
     {
         case 1:
             cout << "Reportar todos los productos." << endl;
-            
-            if (contenedorProductos.verificarExistencia()) {
-                cout << "\n" << "Productos ingresados:" << endl;
-                cout << contenedorProductos.toString() << endl;
-            }
-            else {
-                cout << "\n" << "No hay productos ingresados." << endl;
-            }
+
+            mp.reporteProductos();
+
             break;
 
         case 2:

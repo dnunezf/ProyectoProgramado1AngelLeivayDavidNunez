@@ -17,7 +17,7 @@ public:
 	}
 	static double precioCosto() {
 		double des;
-		cout << "\nIngrese el presio Costo: " << endl;
+		cout << "\nIngrese el precio Costo: " << endl;
 		cin >> des;
 		return des;
 	}
@@ -41,7 +41,7 @@ public:
 	}
 	static string CompraCod() {
 		string cod;
-		cout << "\nPorfavor ingrese el Codigo del producto a Comprar: " << endl;
+		cout << "\nPorfavor ingrese el codigo del producto a Comprar: " << endl;
 		cin >> cod;
 		return cod;
 	}

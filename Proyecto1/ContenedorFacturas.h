@@ -29,10 +29,7 @@ template<class Factura>
 void ConFactura<Factura>::IngresarFactura(Factura& info) {
 	Factura* info1 = new Factura(info);
 	facturas = new Nodo<Producto>(facturas, *info1);
-	return true;
 }
-
-
 
 //Definimos el template
 static ConFactura<Factura> contenedorFacturas;
