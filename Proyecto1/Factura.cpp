@@ -5,7 +5,7 @@ Factura::Factura()
     InformacionCar << "";
     carPtr = NULL;
     PrecioBase = 0.0;
-    Iva = 0, 13;
+    Iva = 0.13;
     PrecioConIva = 0;
     carPtr = 0;
 }

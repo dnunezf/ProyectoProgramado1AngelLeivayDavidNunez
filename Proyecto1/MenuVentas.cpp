@@ -59,6 +59,7 @@ int MenuVentas::obtenerValor(int min, int max)
 void MenuVentas::procesarOpcion(int opcion)
 {
     CarritoDecorador* Carrito = new CarritoDecorador();
+
     Carrito->setConPro(&contenedorProductos);
     std::string codCompra;
     int opcionCarrito;
@@ -79,6 +80,9 @@ void MenuVentas::procesarOpcion(int opcion)
             cout << "Continuar [S = 1] [N = 0]" << std::endl;
             cin >> opcionCarrito;
         } while (opcionCarrito == 1);
+        Factura* fac = new Factura();
+        fac->setCarPtr(*Carrito);
+        contenedorFacturas.IngresarFactura(*fac);
         break;
 
     case 2:

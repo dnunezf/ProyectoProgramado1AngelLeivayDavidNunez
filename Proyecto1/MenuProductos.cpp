@@ -145,9 +145,9 @@ void MenuProductos::ingresoConserva()
         cin >> dia >> mes >> anio;
         Fecha* fechaIngreso = new Fecha(dia, mes, anio);
 
-        Conserva conserva(codigo, nombreComercial, descripcion, precioCosto, categoria, existencia, limite, fechaIngreso, envasado);
+        Producto* conserva = new Conserva(codigo, nombreComercial, descripcion, precioCosto, categoria, existencia, limite, fechaIngreso, envasado);
 
-        contenedorProductos.ingresaProducto(conserva);
+        contenedorProductos.ingresaProducto(*conserva);
 
         cout << "\n" << "Producto tipo conserva ingresado correctamente..." << endl;
     }
@@ -220,9 +220,9 @@ void MenuProductos::ingresoAbarrote()
         cin.ignore();
         getline(cin, emp);
 
-        Abarrote abarrote(codigo, nombreComercial, descripcion, precioCosto, categoria, existencia, limite, fechaIngreso, nacional, peso, perece, emp);
+        Producto* abarrote = new Abarrote (codigo, nombreComercial, descripcion, precioCosto, categoria, existencia, limite, fechaIngreso, nacional, peso, perece, emp);
 
-        contenedorProductos.ingresaProducto(abarrote);
+        contenedorProductos.ingresaProducto(*abarrote);
 
         cout << "\nProducto tipo abarrotes ingresado correctamente." << endl;
     }
@@ -309,10 +309,10 @@ void MenuProductos::ingresoEmbutido()
         cin >> opcionTripa;
         tripa = (opcionTripa == 'S' || opcionTripa == 's');
         
-        Embutido embutido(codigo, nombreComercial, descripcion, precioCosto, categoria, existencia, limite, fechaIngreso, nacional, peso, perece, nombreAnimal, parteAnimal, marca, tripa);
+        Producto* embutido = new Embutido (codigo, nombreComercial, descripcion, precioCosto, categoria, existencia, limite, fechaIngreso, nacional, peso, perece, nombreAnimal, parteAnimal, marca, tripa);
 
         // Agregar el producto al contenedor
-        contenedorProductos.ingresaProducto(embutido); 
+        contenedorProductos.ingresaProducto(*embutido); 
 
         cout << "\nProducto tipo embutido ingresado correctamente." << endl;
     }
@@ -438,5 +438,4 @@ void MenuProductos::ingresoProductos()
     }
 
     cout << "\n" << "Productos ingresados correctamente." << endl;
-    cout << contenedorProductos.toString();
 }

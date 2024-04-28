@@ -8,11 +8,12 @@ template<class Factura>
 class ConFactura {
 private:
 	Nodo<Factura>* facturas;
-
+	Factura* facPtr;
 public:
 	ConFactura();
 	ConFactura(const ConFactura&);
 	virtual ~ConFactura();
+	void IngresarFactura(Factura&);
 };
 
 template<class Factura>
@@ -23,6 +24,15 @@ ConFactura<Factura>::ConFactura(const ConFactura&) {}
 
 template<class Factura>
 ConFactura<Factura>::~ConFactura() { }
+
+template<class Factura>
+void ConFactura<Factura>::IngresarFactura(Factura& info) {
+	Factura* info1 = new Factura(info);
+	facturas = new Nodo<Producto>(facturas, *info1);
+	return true;
+}
+
+
 
 //Definimos el template
 static ConFactura<Factura> contenedorFacturas;
