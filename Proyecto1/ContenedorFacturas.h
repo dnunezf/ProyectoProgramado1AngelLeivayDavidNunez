@@ -17,7 +17,7 @@ public:
 };
 
 template<class Factura>
-ConFactura<Factura>::ConFactura() : facturas(NULL) {}
+ConFactura<Factura>::ConFactura() : facturas(NULL), facPtr(NULL) {}
 
 template<class Factura>
 ConFactura<Factura>::ConFactura(const ConFactura&) {}
@@ -27,8 +27,9 @@ ConFactura<Factura>::~ConFactura() { }
 
 template<class Factura>
 void ConFactura<Factura>::IngresarFactura(Factura& info) {
-	Factura* info1 = new Factura(info);
-	facturas = new Nodo<Producto>(facturas, *info1);
+	Factura* info1 = new Factura();
+	info1 = &info;
+	facturas = new Nodo<Factura>(facturas, *info1);
 }
 
 //Definimos el template

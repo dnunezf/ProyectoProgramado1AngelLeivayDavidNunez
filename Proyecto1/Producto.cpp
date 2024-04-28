@@ -13,7 +13,7 @@ Producto::Producto()
 }
 
 Producto::Producto(string cod, string nC, string desc, double pC, string cat, int exist, int lim, Fecha* fI) : 
-    codigo(cod), nombreComercial(nC), descripcion(desc), precioCosto(pC), categoria(cat), existencia(exist), limite(lim), fechaIngreso(fI) {}
+   ptrCategoria(NULL), codigo(cod), nombreComercial(nC), descripcion(desc), precioCosto(pC), categoria(cat), existencia(exist), limite(lim), fechaIngreso(fI) {}
 
 Producto::~Producto()
 {

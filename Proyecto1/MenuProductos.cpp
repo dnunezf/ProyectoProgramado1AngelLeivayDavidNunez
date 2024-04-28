@@ -386,7 +386,7 @@ void MenuProductos::creacionFactura()
     std::string codCompra;
     int opcionCarrito;
 
-    //Factura* fac = new Factura();
+    Factura* fac = new Factura();
 
     do {
         cout << "\nCrear Factura Nueva." << std::endl;
@@ -402,8 +402,10 @@ void MenuProductos::creacionFactura()
         cin >> opcionCarrito;
     } while (opcionCarrito == 1);
 
-    //fac->setCarPtr(*Carrito);
-    //contenedorFacturas.IngresarFactura(*fac);
+    fac->setCarritoDecorador(*Carrito);
+    fac->autoLlenar();
+    contenedorFacturas.IngresarFactura(*fac);
+    cout << "Factura Generada Correctamente" << endl;
 }
 
 void MenuProductos::reporteProductos()

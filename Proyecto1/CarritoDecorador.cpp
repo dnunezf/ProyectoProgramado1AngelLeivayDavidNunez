@@ -84,9 +84,6 @@ double CarritoDecorador::precioTotal() {
 		sum += ptrPro->getPrecioCosto();
 		sum += this->getProDec()->precioTotal();
 	}
-	else {
-		sum += ptrPro->getPrecioCosto();
-	}
 	return sum;
 }
 
