@@ -88,7 +88,7 @@ string ConProductos<Producto>::toString()
 {
 	stringstream s;
 
-	Nodo<Producto>* pAct = productos;
+	Nodo<Producto>* pAct = new Productos;
 
 	while (pAct != NULL) 
 	{

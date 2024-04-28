@@ -438,4 +438,5 @@ void MenuProductos::ingresoProductos()
     }
 
     cout << "\n" << "Productos ingresados correctamente." << endl;
+    cout << contenedorProductos.toString();
 }

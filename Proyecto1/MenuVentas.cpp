@@ -67,14 +67,17 @@ void MenuVentas::procesarOpcion(int opcion)
     {
     case 1:
         do {
-            std::cout << "\nCrear Factura Nueva." << std::endl;
+            cout << "\nCrear Factura Nueva." << std::endl;
             codCompra = Apoyo::CompraCod();
             if (Carrito->agregarProducto(codCompra)) {
                 Carrito->setProducto(contenedorProductos.getProducto(codCompra));
                 Carrito->setProDec(Carrito);
             }
-            std::cout << "Continuar [S = 1] [N = 0]" << std::endl;
-            std::cin >> opcionCarrito;
+            else {
+                cerr << "NO EXISTE EL PRODUCTO" << endl;
+            }
+            cout << "Continuar [S = 1] [N = 0]" << std::endl;
+            cin >> opcionCarrito;
         } while (opcionCarrito == 1);
         break;
 
