@@ -152,5 +152,8 @@
     <ClInclude Include="Factura.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ContenedorFacturas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

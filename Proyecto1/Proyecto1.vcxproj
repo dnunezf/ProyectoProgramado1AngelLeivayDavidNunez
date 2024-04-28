@@ -156,6 +156,7 @@
     <ClInclude Include="CarritoDecorador.h" />
     <ClInclude Include="Categoria.h" />
     <ClInclude Include="Conserva.h" />
+    <ClInclude Include="ContenedorFacturas.h" />
     <ClInclude Include="ContenedorProductos.h" />
     <ClInclude Include="Controladora.h" />
     <ClInclude Include="Embutido.h" />
