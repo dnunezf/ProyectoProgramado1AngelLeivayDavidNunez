@@ -12,7 +12,6 @@
 
 //CREACION DEL TEMPLATE contenedorProductos
 ConProductos<Producto> contenedorProductos;
-
 void MenuProductos::mostrar()
 {
     system("pause");

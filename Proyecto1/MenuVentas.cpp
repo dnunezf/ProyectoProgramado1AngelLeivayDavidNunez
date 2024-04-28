@@ -1,5 +1,7 @@
 #include "MenuVentas.h"
 #include "ExcepcionMenu.h"
+#include "Apoyo.h"
+#include "CarritoDecorador.h"
 
 void MenuVentas::mostrar()
 {
@@ -55,10 +57,13 @@ int MenuVentas::obtenerValor(int min, int max)
 
 void MenuVentas::procesarOpcion(int opcion)
 {
+    CarritoDecorador* Carrito = new CarritoDecorador();
+    string codCompra;
     switch (opcion)
     {
         case 1:
             cout << "\n" << "Crear Factura Nueva." << endl;
+            codCompra = Apoyo::CompraCod();
             break;
 
         case 2:

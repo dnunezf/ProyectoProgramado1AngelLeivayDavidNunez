@@ -15,6 +15,7 @@ public:
 	CarritoDecorador(int, Producto*, CarritoDecorador*);
 	CarritoDecorador();
 	virtual ~CarritoDecorador();
+	void setConPro(ConProductos<Producto>*);
 	void setProDec(CarritoDecorador*);
 	bool agregarProducto(string);
 	bool eliminarProducto(string);

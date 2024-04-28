@@ -171,6 +171,7 @@
     <ClInclude Include="MenuProductos.h" />
     <ClInclude Include="MenuReportes.h" />
     <ClInclude Include="MenuVentas.h" />
+    <ClInclude Include="MiniSuper.h" />
     <ClInclude Include="Nodo.h" />
     <ClInclude Include="Perecedero.h" />
     <ClInclude Include="ProdPerecedero.h" />

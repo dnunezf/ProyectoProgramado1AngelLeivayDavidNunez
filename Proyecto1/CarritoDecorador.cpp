@@ -7,11 +7,18 @@ CarritoDecorador::CarritoDecorador(int ced, Producto* pro, CarritoDecorador* dec
 }
 
 CarritoDecorador::CarritoDecorador() {
-
+	ptr = NULL;
+	ptrCon = NULL;
+	ptrPro = NULL;
 }
 
 CarritoDecorador:: ~CarritoDecorador() {
 
+}
+
+void CarritoDecorador::setConPro(ConProductos<Producto>* pro)
+{
+	ptrCon = pro;
 }
 
 void CarritoDecorador::setProDec(CarritoDecorador* ptr2) {
@@ -31,6 +38,7 @@ bool CarritoDecorador::agregarProducto(string codigo)
 			ptrCon->setCanProducto(codigo, can);
 			return true;
 		}
+		return false;
 	}
 	return false;
 }

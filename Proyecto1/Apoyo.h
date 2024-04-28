@@ -39,7 +39,10 @@ public:
 		cin >> can;
 		return can;
 	}
-	static void ComprarProducto() {
-
+	static string CompraCod() {
+		string cod;
+		cout << "\nPorfavor ingrese el Codigo del producto a Comprar: " << endl;
+		cin >> cod;
+		return cod;
 	}
 };
