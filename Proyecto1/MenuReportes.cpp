@@ -93,7 +93,7 @@ void MenuReportes::procesarOpcion(int opcion)
 
         case 5:
             cout << "Reportar las cedulas de los 5 mejores clientes que compran en el minisuper." << endl;
-            // Aquí debes agregar la lógica para el reporte de las cédulas de los mejores clientes
+            cout << contenedorFacturas.mejores5();
             break;
 
         case 6:
