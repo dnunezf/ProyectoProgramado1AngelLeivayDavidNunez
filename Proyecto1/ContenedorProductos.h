@@ -240,3 +240,6 @@ inline Producto* ConProductos<Producto>::getProducto(string codigo)
 	cerr << "NO SE ENCUENTRA EL PRODUCTO" << endl;
 	return NULL;
 }
+
+//Definimos el template
+static ConProductos<Producto> contenedorProductos;

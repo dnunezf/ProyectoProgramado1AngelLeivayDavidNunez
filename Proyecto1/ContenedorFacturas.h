@@ -22,6 +22,7 @@ template<class Factura>
 ConFactura<Factura>::ConFactura(const ConFactura&) {}
 
 template<class Factura>
-ConFactura<Factura>::~ConFactura() {
+ConFactura<Factura>::~ConFactura() { }
 
-}
+//Definimos el template
+static ConFactura<Factura> contenedorFacturas;

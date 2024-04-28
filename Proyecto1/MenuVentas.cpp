@@ -2,6 +2,8 @@
 #include "ExcepcionMenu.h"
 #include "Apoyo.h"
 #include "CarritoDecorador.h"
+#include"ContenedorProductos.h"
+#include"ContenedorFacturas.h"
 
 void MenuVentas::mostrar()
 {
