@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include "MenuReportes.h"
 #include "ContenedorProductos.h"
 #include "ExcepcionMenu.h"

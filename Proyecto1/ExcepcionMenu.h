@@ -1,5 +1,11 @@
 //CLASE QUE VALIDA EL CORRECTO INGRESO DE LAS OPCIONES DEL MENU, POR PARTE DEL USUARIO
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include<iostream>
 #include<sstream>

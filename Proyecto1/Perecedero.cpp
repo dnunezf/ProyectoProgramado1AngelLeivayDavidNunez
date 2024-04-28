@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include "Perecedero.h"
 
 Perecedero::Perecedero() : fechaVencimiento(NULL) 

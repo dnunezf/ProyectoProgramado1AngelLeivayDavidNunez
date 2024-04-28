@@ -1,5 +1,11 @@
 //CLASE NODO TIPO TEMPLATE
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include<iostream>
 #include<sstream>

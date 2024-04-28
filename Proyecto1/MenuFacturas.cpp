@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include "MenuFacturas.h"
 #include "ExcepcionMenu.h"
 
@@ -62,10 +68,16 @@ void MenuFacturas::procesarOpcion(int opcion)
     {
         case 1:
             cout << "\n" << "Eliminar Facturas." << endl;
+
+            cout << "\nFUNCION NO REQUERIDA" << endl;
+
             break;
 
         case 2:
             cout << "\n" << "Actualizar Facturas." << endl;
+
+            cout << "\nFUNCION NO REQUERIDA" << endl;
+
             break;
 
         case 3:

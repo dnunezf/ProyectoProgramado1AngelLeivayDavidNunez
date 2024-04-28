@@ -1,5 +1,11 @@
 // CLASE DE APOYO AL PROYECTO
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 
 

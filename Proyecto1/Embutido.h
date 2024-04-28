@@ -1,5 +1,11 @@
 //CLASE EMBUTIDO. DA LA CARA (HEREDA DE CARNE)
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include"Carne.h"
 #include"Empaque.h"

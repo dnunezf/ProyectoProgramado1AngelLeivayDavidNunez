@@ -1,5 +1,11 @@
 //INTERFAZ ABSTRACTA PARA LOS DECORADORES
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include <vector>
 #include "ContenedorProductos.h"

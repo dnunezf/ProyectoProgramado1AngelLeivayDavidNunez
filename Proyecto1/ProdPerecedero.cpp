@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include "ProdPerecedero.h"
 
 ProdPerecedero::ProdPerecedero() : Producto(), nacional(false), peso(0.0), ptrPerecedero(NULL)

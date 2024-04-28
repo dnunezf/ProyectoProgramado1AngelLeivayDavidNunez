@@ -1,5 +1,11 @@
 //CLASE CARNE
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include"ProdPerecedero.h"
 

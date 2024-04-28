@@ -155,8 +155,5 @@
     <ClInclude Include="ContenedorFacturas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MiniSuper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

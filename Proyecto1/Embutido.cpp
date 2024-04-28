@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include "Embutido.h"
 
 Embutido::Embutido() : Carne(), marca(" "), empPtr(NULL)

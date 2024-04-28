@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include "MenuProductos.h"
 #include "ExcepcionMenu.h"
 #include"Apoyo.h"
@@ -20,7 +26,7 @@ void MenuProductos::mostrar()
     cout << "\n" << "1. Ingreso Producto/s" << endl;
     cout << "2. Eliminar Producto/s" << endl;
     cout << "3. Modificar Producto/s" << endl;
-    cout << "4. Retornar" << endl;
+    cout << "4. Retornar" << endl;;
     cout << "\n" << "Ingrese una opcion: " << endl;
 
     try
@@ -94,6 +100,10 @@ void MenuProductos::procesarOpcion(int opcion)
             break;
 
         case 4:
+            break;
+
+        case 5:
+            cout << contenedorProductos.toString() << endl;
             break;
     }
 }
@@ -388,22 +398,32 @@ void MenuProductos::creacionFactura()
 
     Factura* fac = new Factura();
 
-    do {
-        cout << "\nCrear Factura Nueva." << std::endl;
+    do 
+    {
+        cout << "\nCrear Factura Nueva." << endl;
+
         codCompra = Apoyo::CompraCod();
-        if (Carrito->agregarProducto(codCompra)) {
+
+        if (Carrito->agregarProducto(codCompra)) 
+        {
             Carrito->setProducto(contenedorProductos.getProducto(codCompra));
             Carrito->setProDec(Carrito);
         }
         else {
             cerr << "NO EXISTE EL PRODUCTO" << endl;
         }
-        cout << "Continuar [S = 1] [N = 0]" << std::endl;
+
+        cout << "Continuar [S = 1] [N = 0]: ";
         cin >> opcionCarrito;
-    } while (opcionCarrito == 1);
+
+        // Si la entrada no es 0 o 1, muestra un mensaje de error y vuelve a solicitar la entrada
+        if (opcionCarrito != 0 && opcionCarrito != 1) {
+            cerr << "\nEntrada invalida. Introduzca 0 o 1." << endl;
+        }
+    } while (opcionCarrito != 0 && opcionCarrito != 1);
 
     fac->setCarritoDecorador(*Carrito);
-    fac->autoLlenar();
+    //fac->autoLlenar();
     contenedorFacturas.IngresarFactura(*fac);
     cout << "Factura Generada Correctamente" << endl;
 }

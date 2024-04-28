@@ -1,5 +1,11 @@
 //CLASE BASE PRODUCTO
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include"Fecha.h"
 #include"Categoria.h"

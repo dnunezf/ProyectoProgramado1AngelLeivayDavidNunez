@@ -1,5 +1,11 @@
 //CLASE EMPAQUE
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include"iostream"
 #include"sstream"

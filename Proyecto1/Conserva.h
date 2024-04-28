@@ -1,5 +1,11 @@
 //CLASE CONSERVA. HEREDA DE PRODUCTO
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include"Producto.h"
 

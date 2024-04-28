@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include"CarritoDecorador.h"
 
 CarritoDecorador::CarritoDecorador(int ced, Producto* pro, CarritoDecorador* dec) {

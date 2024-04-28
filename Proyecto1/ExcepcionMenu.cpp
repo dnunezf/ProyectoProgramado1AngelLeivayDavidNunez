@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include"ExcepcionMenu.h"
 
 //CLASE BASE ExcepcionRango

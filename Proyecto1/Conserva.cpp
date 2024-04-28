@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include "Conserva.h"
 
 Conserva::Conserva() : Producto(), envasado(false)

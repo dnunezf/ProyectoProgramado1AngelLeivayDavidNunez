@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include"MenuPrincipal.h"
 #include"ExcepcionMenu.h"
 

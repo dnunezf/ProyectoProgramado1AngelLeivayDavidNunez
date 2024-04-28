@@ -1,3 +1,9 @@
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #include "Categoria.h"
 
 //METODO QUE, DEPENDIENDO DEL VALOR DE LA CATEGORIA, RETORNA EL PORCENTAJKE DE GANANCIA CORRESPONDIENTE

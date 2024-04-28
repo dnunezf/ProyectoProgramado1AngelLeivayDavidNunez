@@ -1,5 +1,11 @@
 //CLASE PERECEDERO.
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include"Fecha.h"
 

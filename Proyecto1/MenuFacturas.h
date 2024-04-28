@@ -1,5 +1,11 @@
 //CLASE MenuFacturas
 
+/*
+  Autores:
+  Ángel Arián Leiva Abarca ()
+  David Alberto Núñez Franco
+*/
+
 #pragma once
 #include"Menu.h"
 
