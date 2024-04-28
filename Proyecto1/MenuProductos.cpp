@@ -8,6 +8,7 @@
 #include"Embutido.h"
 #include"CarritoDecorador.h"
 #include"ContenedorProductos.h"
+#include "ContenedorFacturas.h"
 #include"Carne.h"
 
 void MenuProductos::mostrar()
@@ -19,12 +20,13 @@ void MenuProductos::mostrar()
     cout << "\n" << "1. Ingreso Producto/s" << endl;
     cout << "2. Eliminar Producto/s" << endl;
     cout << "3. Modificar Producto/s" << endl;
-    cout << "4. Retornar" << endl;
+    cout << "4. Crear Factura Nueva" << endl;
+    cout << "5. Retornar" << endl;
     cout << "\n" << "Ingrese una opcion: " << endl;
 
     try
     {
-        int opcion = obtenerValor(1, 4);
+        int opcion = obtenerValor(1, 5);
         procesarOpcion(opcion);
     }
     catch (ExcepcionRangoInferior* e)
@@ -68,6 +70,15 @@ int MenuProductos::obtenerValor(int min, int max)
 
 void MenuProductos::procesarOpcion(int opcion) 
 {
+
+    CarritoDecorador* Carrito = new CarritoDecorador();
+
+    Carrito->setConPro(&contenedorProductos);
+    std::string codCompra;
+    int opcionCarrito;
+
+    //Factura* fac = new Factura();
+
     switch (opcion)
     {
         case 1:
@@ -92,6 +103,26 @@ void MenuProductos::procesarOpcion(int opcion)
             break;
 
         case 4:
+
+            do {
+                cout << "\nCrear Factura Nueva." << std::endl;
+                codCompra = Apoyo::CompraCod();
+                if (Carrito->agregarProducto(codCompra)) {
+                    Carrito->setProducto(contenedorProductos.getProducto(codCompra));
+                    Carrito->setProDec(Carrito);
+                }
+                else {
+                    cerr << "NO EXISTE EL PRODUCTO" << endl;
+                }
+                cout << "Continuar [S = 1] [N = 0]" << std::endl;
+                cin >> opcionCarrito;
+            } while (opcionCarrito == 1);
+            
+            /*fac->setCarPtr(*Carrito);
+            contenedorFacturas.IngresarFactura(*fac);*/
+            break;
+
+        case 5:
             break;
     }
 }

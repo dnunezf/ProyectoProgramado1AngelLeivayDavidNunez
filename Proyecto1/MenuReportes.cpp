@@ -1,4 +1,5 @@
 #include "MenuReportes.h"
+#include "ContenedorProductos.h"
 #include "ExcepcionMenu.h"
 
 void MenuReportes::mostrar()
@@ -63,6 +64,14 @@ void MenuReportes::procesarOpcion(int opcion)
     {
         case 1:
             cout << "Reportar todos los productos." << endl;
+            
+            if (contenedorProductos.verificarExistencia()) {
+                cout << "\n" << "Productos ingresados:" << endl;
+                cout << contenedorProductos.toString() << endl;
+            }
+            else {
+                cout << "\n" << "No hay productos ingresados." << endl;
+            }
             break;
 
         case 2:

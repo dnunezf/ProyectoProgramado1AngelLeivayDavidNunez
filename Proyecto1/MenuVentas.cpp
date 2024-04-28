@@ -80,9 +80,9 @@ void MenuVentas::procesarOpcion(int opcion)
             cout << "Continuar [S = 1] [N = 0]" << std::endl;
             cin >> opcionCarrito;
         } while (opcionCarrito == 1);
-        Factura* fac = new Factura();
+        /*Factura* fac = new Factura();
         fac->setCarPtr(*Carrito);
-        contenedorFacturas.IngresarFactura(*fac);
+        contenedorFacturas.IngresarFactura(*fac);*/
         break;
 
     case 2:
