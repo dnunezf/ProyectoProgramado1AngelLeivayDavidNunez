@@ -60,12 +60,21 @@ int MenuVentas::obtenerValor(int min, int max)
 void MenuVentas::procesarOpcion(int opcion)
 {
     CarritoDecorador* Carrito = new CarritoDecorador();
+    Carrito->setConPro(&contenedorProductos);
     string codCompra;
     switch (opcion)
     {
         case 1:
-            cout << "\n" << "Crear Factura Nueva." << endl;
-            codCompra = Apoyo::CompraCod();
+            do {
+                cout << "\n" << "Crear Factura Nueva." << endl;
+                codCompra = Apoyo::CompraCod();
+                if (Carrito->agregarProducto(codCompra)) {
+                    Carrito->setProducto(contenedorProductos.getProducto(codCompra));
+                    Carrito->setProDec(Carrito);
+                }
+                cout << "Continuar [S = 1] [N = 0]" << endl;
+                cin >> opcion;
+            } while (opcion == 1);
             break;
 
         case 2:

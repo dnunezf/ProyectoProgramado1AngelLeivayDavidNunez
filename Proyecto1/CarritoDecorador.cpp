@@ -101,3 +101,8 @@ string CarritoDecorador::toString() {
 	}
 	return s.str();
 }
+
+void CarritoDecorador::setProducto(Producto* producto)
+{
+	ptrPro = producto;
+}

@@ -27,4 +27,7 @@ public:
 	string getNombres();
 	virtual double precioTotal();
 	virtual string toString();
+
+	//Nuevo
+	void setProducto(Producto*);
 };
